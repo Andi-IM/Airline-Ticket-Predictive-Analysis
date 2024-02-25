@@ -62,7 +62,7 @@ Detail dari file ini adalah sebagai berikut:
 
 ### Explanatory Data Analysis
 
-Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (*Explanatory Data Analysis*) atau disingkat EDA [^2]. EDA meliputi Analisis Data Univariat dan Multivariat.
+Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (*Explanatory Data Analysis*) atau disingkat EDA [^4]. EDA meliputi Analisis Data Univariat dan Multivariat.
 
 Analisis Univariat merupakan teknik menganalisis data hanya dari satu variabel. Variabel dalam kumpulan dataset mengacu pada satu fitur/kolom. Proses ini dapat dilakukan dengan menganalisis grafik atau non grafik dengan menggunakan metode statistika. Analisis Multivariat membandingkan dua atau lebih variabel. Analisis dengan teknik ini dapat mengetahui bagaimana satu fitur/kolom dapat mempengaruhi fitur lainnya.
 
@@ -141,8 +141,8 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 
 [^1]: R. H. Pranata, “PENERAPAN ALGORITMA JARINGAN SYARAF TIRUAN UNTUK MEMPREDIKSI HARGA TIKET PESAWAT,” Jurnal Sistem Komputer Musirawas (JUSIKOM), vol. 3, no. 2, p. 122, Dec. 2018, doi: https://doi.org/10.32767/jusikom.v3i2.334.
 
-[^2]: C. Chatfield, “Exploratory data analysis,” European Journal of Operational Research, vol. 23, no. 1, pp. 5–13, Jan. 1986, doi: https://doi.org/10.1016/0377-2217(86)90209-2.
+[^2]: Agarwal, Umang & Gupta, Smriti & Goyal, Madhav. (2022). House Price Prediction using Linear Regression. 10.13140/RG.2.2.11175.62887.
 
-[^3] Agarwal, Umang & Gupta, Smriti & Goyal, Madhav. (2022). House Price Prediction using Linear Regression. 10.13140/RG.2.2.11175.62887.
+[^3]: Li, Xinshu. (2022). Prediction and Analysis of Housing Price Based on the Generalized Linear Regression Model. Computational Intelligence and Neuroscience. 2022. 1-9. 10.1155/2022/3590224.
 
-[^4] Li, Xinshu. (2022). Prediction and Analysis of Housing Price Based on the Generalized Linear Regression Model. Computational Intelligence and Neuroscience. 2022. 1-9. 10.1155/2022/3590224.
+[^4]: C. Chatfield, “Exploratory data analysis,” European Journal of Operational Research, vol. 23, no. 1, pp. 5–13, Jan. 1986, doi: https://doi.org/10.1016/0377-2217(86)90209-2.
