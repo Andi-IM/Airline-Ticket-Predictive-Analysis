@@ -66,7 +66,130 @@ Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui meto
 
 Analisis Univariat merupakan teknik menganalisis data hanya dari satu variabel. Variabel dalam kumpulan dataset mengacu pada satu fitur/kolom. Proses ini dapat dilakukan dengan menganalisis grafik atau non grafik dengan menggunakan metode statistika. Analisis Multivariat membandingkan dua atau lebih variabel. Analisis dengan teknik ini dapat mengetahui bagaimana satu fitur/kolom dapat mempengaruhi fitur lainnya.
 
-Berikut adalah hasil EDA, dimana Gambar 1 merupakan EDA Analisis Univariat dan Gambar 2 merupakan EDA Analisis Multivariat.
+### Analisis Univariat Data Kategorikal
+
+```shell
+    Fitur airline
+           jumlah sampel  persentase
+Vistara           126917        42.6
+Air_India          79601        26.7
+Indigo             43120        14.5
+GO_FIRST           23173         7.8
+AirAsia            16098         5.4
+SpiceJet            9011         3.0
+```
+Terdapat 6 kategori pada fitur airlines, secara berurutan dari jumlahnya yang paling banyak yaitu: Vistara, Air India, Indigo, GO FIRST, AirAsia, dan SpiceJet. 
+
+```shell
+	 Fitur flight 
+
+         jumlah sampel  persentase
+UK-706            3116         1.0
+UK-772            2711         0.9
+UK-720            2630         0.9
+UK-836            2532         0.8
+UK-874            2422         0.8
+...                ...         ...
+6E-865               1         0.0
+SG-9974              1         0.0
+6E-2914              1         0.0
+G8-705               1         0.0
+SG-9923              1         0.0
+
+[1561 rows x 2 columns]
+```
+
+Terdapat lebih dari 1561 kategori untuk fitur flight.
+
+```shell
+	 Fitur source_city 
+
+           jumlah sampel  persentase
+Delhi              61156        20.5
+Mumbai             60683        20.4
+Bangalore          51548        17.3
+Kolkata            45841        15.4
+Hyderabad          40636        13.6
+Chennai            38056        12.8
+```
+Terdapat 6 kategori untuk fitur source_city, secara berurutan dari yang paling terbanyak yaitu Kota Delhi, Mumbai, Bangalore, Kolkata, Hyderabad, dan Chennai. Sebaran kota ini terlhat merata dengan persentase tertinggi 20.5%.
+
+```shell
+	 Fitur departure_time 
+
+               jumlah sampel  persentase
+Morning                70372        23.6
+Early_Morning          66189        22.2
+Evening                64955        21.8
+Night                  47998        16.1
+Afternoon              47100        15.8
+Late_Night              1306         0.4
+```
+
+Terdapat 6 kategori untuk fitur departure_time, secara berurutan dari waktu pagi, pagi awal, sore, malam, siang, dan larut malam.
+
+```shell
+	 Fitur stops 
+
+             jumlah sampel  persentase
+one                 249478        83.7
+zero                 36004        12.1
+two_or_more          12438         4.2
+```
+
+Pada fitur stops, sekali penerbangan adalah yang paling banyak ditemui.
+
+```shell
+	 Fitur arrival_time 
+
+               jumlah sampel  persentase
+Night                  90702        30.4
+Evening                77217        25.9
+Morning                62708        21.0
+Afternoon              37938        12.7
+Early_Morning          15367         5.2
+Late_Night             13988         4.7
+```
+
+Pada fitur arrival_time, terdapat 6 kategori yang sama dengan departure_time, namun malam yang paling banyak ditemui.
+
+```shell
+	 Fitur destination_city 
+
+           jumlah sampel  persentase
+Mumbai             58656        19.7
+Delhi              57141        19.2
+Bangalore          50686        17.0
+Kolkata            49138        16.5
+Hyderabad          42329        14.2
+Chennai            39970        13.4
+```
+
+Untuk fitur destination_city memiliki kategori yang sama dengan source_city, namun Kota Mumbai yang paling banyak ditemui.
+
+```shell
+	 Fitur class 
+
+          jumlah sampel  persentase
+Economy          204792        68.7
+Business          93128        31.3
+```
+
+Untuk fitur class terdapat 2 kategori, yaitu: Ekonomi dan Bisnis. Kelas Ekonomi paling banyak ditemui dengan persentase 68%.
+
+### Analisis Univariat Data Numerikal
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/7d41a441-8af3-4126-81ad-490eceffbfe1" width="640px"></p>
+<p align="center"><b>Analisis univariat untuk data numerik</b></p>
+
+Dari histogram "price" dapat diperoleh informasi antara lain:
+
+- Peningkatan harga tiket pesawat sebanding dengan penurunan jumlah sampel. Hal ini dapat kita lihat dengan jelas dari histogram "price" yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu y).
+- Rentang harga tiket cukup tinggi yaitu dari skala puluhan ribu rupee India hingga sekitar 100000 rupee.
+
+### Analisis Multivariat
+
+
 
 ## Data Preparation
 
