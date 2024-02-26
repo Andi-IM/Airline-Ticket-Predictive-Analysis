@@ -78,6 +78,7 @@ GO_FIRST           23173         7.8
 AirAsia            16098         5.4
 SpiceJet            9011         3.0
 ```
+
 Terdapat 6 kategori pada fitur airlines, secara berurutan dari jumlahnya yang paling banyak yaitu: Vistara, Air India, Indigo, GO FIRST, AirAsia, dan SpiceJet. 
 
 ```shell
@@ -112,6 +113,7 @@ Kolkata            45841        15.4
 Hyderabad          40636        13.6
 Chennai            38056        12.8
 ```
+
 Terdapat 6 kategori untuk fitur source_city, secara berurutan dari yang paling terbanyak yaitu Kota Delhi, Mumbai, Bangalore, Kolkata, Hyderabad, dan Chennai. Sebaran kota ini terlhat merata dengan persentase tertinggi 20.5%.
 
 ```shell
@@ -179,7 +181,9 @@ Untuk fitur class terdapat 2 kategori, yaitu: Ekonomi dan Bisnis. Kelas Ekonomi 
 
 ### Analisis Univariat Data Numerikal
 
-<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/7d41a441-8af3-4126-81ad-490eceffbfe1" width="640px"></p>
+<p align="center">
+    <img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/7d41a441-8af3-4126-81ad-490eceffbfe1" width="640px">
+</p>
 <p align="center"><b>Analisis univariat untuk data numerik</b></p>
 
 Dari histogram "price" dapat diperoleh informasi antara lain:
@@ -187,7 +191,9 @@ Dari histogram "price" dapat diperoleh informasi antara lain:
 - Peningkatan harga tiket pesawat sebanding dengan penurunan jumlah sampel. Hal ini dapat kita lihat dengan jelas dari histogram "price" yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu y).
 - Rentang harga tiket cukup tinggi yaitu dari skala puluhan ribu rupee India hingga sekitar 100000 rupee.
 
-### Analisis Multivariat
+### Analisis Multivariat Data Kategorikal
+
+### Analisis Multivariat Data Numerikal
 
 
 
@@ -202,41 +208,9 @@ Pada proses *data preparation* dilakukan empat tahap persiapan data, yaitu:
 
 ## Modeling
 
-Model yang digunakan untuk memprediksi kemungkinan kebakaran berdasarkan data satelit antara lain:
-
-- *K-Nearest Neighbors*
-  
-  K-Nearest Neighbours (kNN) adalah algoritma yang paling simple. Metode ini bekerja dengan cara mencari sejumlah *k* pola (di antara semua pola latih yang ada di semua kelas) yang terdekat dengan pola masukan, kemudian menentukan kelas keputusan berdasarkan jumlah pola terbanyak di antara *k* pola tersebut (voting). KNN dapat digunakan untuk kasus klasifikasi maupun regresi.
-
-   **Tahapan Cara Kerja kNN**
-  - Menentukan jumlah tetangga terdekat *k*.
-  - Menghitung jarak antara data testing ke data training.
-  - Mengurutkan data berdasarkan data yang mempunyai jarak terkecil (bisa menggunakan manhattan, eucledian ataupun minkowski)
-  - Menentukan kelompok testing berdasarkan label pada *k*.
-
-  Pada proyek ini menggunakan *n_neighbors = 50* dengan catatan pemilihan nilai *k* sangat penting dan berpengaruh dengan performa model. Metrik jarak juga memiliki keunggulan masing-masing, dan di proyek ini akan menggunakan metode Eucledian untuk menghitung jarak. Dan metode evaluasi selanjutnya akan dibahas pada [Evaluasi Model](#evaluasi-model) .
-
-  **Kelebihan kNN**
-  - *Mudah digunakan* dengan kompleksitas algoritma yang tidak sebegitunya tinggi.
-  - *Mudah beradaptasi* - Algoritma ini menyimpan seluruh data dalam penyimpanan memori. Ketika sebuah contoh baru atau titik data ditambahkan, kNN secara otomatis menyesuaikan diri berdasarkan contoh baru dan turut berkontribusi pada prediksi masa depan.
-  - *Sedikit pengaturan hyperparameter* -  Dalam training algoritma ini hanya memerlukan parameter k
-
-  **Kekurangan kNN**
-  - *Tidak dapat diskalakan* - Algoritma kNN sering juga dikatakan algoritma pemalas (*Lazy Algorithm*) karena ia tidak secara eksplisit mempelajari model dari data pelatihan. Akibatnya, kNN membutuhkan daya komputasi dan penyimpanan data selama fase prediksi. Hal ini membuat kNN memakan waktu dan sumber daya.
-  - *Kutukan Dimensionalitas* - Algoritma kNN rentan terhadap "fenomena puncak" yang terkait dengan kutukan dimensionalitas. Ini berarti kNN menghadapi kesulitan dalam mengklasifikasikan titik data secara akurat ketika dimensi data menjadi terlalu tinggi.
-  - *Rentan Overfit* - karena rentan dengan "Kutukan dimensionalitas", algoritma kNN juga rentan dengan masalah overfitting. Oleh karena itu, teknik pemilihan fitur dan reduksi dimensionalitas umumnya diterapkan untuk masalah ini.
-
 - *Random Forest*
   
   Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*. Algoritma ini merupakan kombinasi pohon keputusan sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah..
-- *Boosting*
-
-  Boosting dikemukakan oleh Robert E. Schapire pada tahun 1990. Sesuai dengan namanya, metode boosting bekerja dengan cara memperkuat (*boost*) sebuah model klasifikasi awal yang lemah, secara sekuensial menggunakan penyamplingan objek data bootstrap berdasarkan pembobotan dinamis.
-  Algoritma boosting sudah ada sejak puluhan tahun lalu. Kembali terkenal sejak adanya peningkatan dalam kompetisi machine learning atau data science. Algoritma ini sangat powerful dalam meningkatkan akurasi prediksi. Algoritma boosting sering mengungguli model yang lebih sederhana seperti logistic regression dan random forest. Beberapa pemenang kompetisi kaggle menyatakan bahwa mereka menggunakan algoritma boosting atau kombinasi beberapa algoritma boosting dalam modelnya. Meskipun demikian, hal ini tetap bergantung pada kasus per kasus, ruang lingkup masalah, dan dataset yang digunakan.
-Dilihat caranya berkembang, algoritma boosting terdiri dari dua metode:
-  - Adaptive boosting
-  - Gradient boosting
-- *SVM*
 
 ## Evaluation
 
