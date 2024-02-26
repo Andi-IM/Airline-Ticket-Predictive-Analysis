@@ -193,9 +193,16 @@ Dari histogram "price" dapat diperoleh informasi antara lain:
 
 ### Analisis Multivariat Data Kategorikal
 
+
+
 ### Analisis Multivariat Data Numerikal
 
+Hasil analisis multivariat antar fitur numerikal dapat dilihat pada diagram matriks korelasi berikut ini:
 
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/a51093c9-0d28-4c83-85e4-f8a0d85ec7ae" width="250px"></p>
+<p align="center">Matriks korelasi fitur numerik</p>
+
+Dari gambar di atas, dapat dilihat bahwa durasi memiliki korelasi yang paling tinggi terhadap relasi. Fitur days_left dapat dibuang karena memiliki korelasi yang paling lemah terhadap harga.
 
 ## Data Preparation
 
