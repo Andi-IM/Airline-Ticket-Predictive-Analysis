@@ -16,7 +16,12 @@ Pengembangan model prediksi harga tiket pesawat memiliki potensi atau dampak ber
 
 Berasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan pengembangan sistem yang dapat memprediksi kemungkinan terjadinya kebakaran hutan dengan menjawab permasalahan berikut:
 
-- Dari serangkaian fitur yang ada, fitur apa yang paling berpengaruh dalam memprediksi kemungkinan kebakaran hutan?
+- Apakah harga bervariasi tergantung dengan maskapai penerbangan?
+- Bagaimana harga tiket terpengaruh ketika dibeli hanya 1 atau 2 hari sebelum keberangkatan?
+- Apakah harga tiket berubah berdasarkan waktu keberangkatan dan waktu kedatangan?
+- Bagaimana harga berubah dengan perubahan kota asal dan kota tujuan?
+- Bagaimana perbedaan harga tiket antara Kelas Ekonomi dan Kelas Bisnis?
+- Dari serangkaian fitur yang ada, fitur apa yang paling berpengaruh dalam memprediksi harga tiket pesawat?
 - Bagaimana mengolah dataset sedemikian rupa agar dapat dibuat model prediksi harga tiket pesawat?
 - Seberapa tinggi kemungkinan terjadinya kebakaran berdasarkan karakteristik atau fitur tertentu?
 
@@ -24,6 +29,11 @@ Berasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan pengemb
 
 Untuk menjawab problem tersebut, maka akan dibuat predictive modeling dengan tujuan atau goals sebagai berikut:
 
+- Mengetahui maskapai apa yang mempengaruhi harga tiket.
+- Mengetahui harga tiket jika dibeli pada waktu 1 atau 2 hari menjelang keberangkatan.
+- Mengetahui pengaruh pemilihan waktu keberangkatan dan kedatangan dengan harga tiket pesawat.
+- Mengetahui pengaruh pemilihan kota asal dan tujuan terhadap perubahan harga tiket pesawat.
+- Mengetahui perbedaan harga tiket kelas Ekonomi dan Bisnis.
 - Mengetahui fitur yang paling penting dan berkolerasi dengan nilai kemungkinan terjadinya kebakaran hutan berdasarkan data citra.
 - Melakukan proses *data wragling* dan *data preparation* agar dapat dijalankan pada model machine learning.
 - Membuat model machine learning yang dapat memprediksi kemungkinan terjadinya kebakaran berdasarkan fitur-fitur yang ada.  
@@ -191,15 +201,34 @@ Dari histogram "price" dapat diperoleh informasi antara lain:
 - Peningkatan harga tiket pesawat sebanding dengan penurunan jumlah sampel. Hal ini dapat kita lihat dengan jelas dari histogram "price" yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu y).
 - Rentang harga tiket cukup tinggi yaitu dari skala puluhan ribu rupee India hingga sekitar 100000 rupee.
 
-### Analisis Multivariat Data Kategorikal
+### Analisis Multivariat
+
+#### 7 Kota asal dan tujuan berdasarkan harga
+
+|index|source\_city|destination\_city|price|
+|---|---|---|---|
+|4|Bangalore|Mumbai|299261197|
+|25|Mumbai|Bangalore|298260354|
+|14|Delhi|Mumbai|295931282|
+|29|Mumbai|Kolkata|282022007|
+|27|Mumbai|Delhi|277303264|
+|24|Kolkata|Mumbai|253178558|
+|10|Delhi|Bangalore|250537591|
+
+Dari tabel di atas dapat dilihat bahwa pemilihan kota dapat mempengaruhi harga dari tiket pesawat
+
+#### 5 Penerbangan dan Maskapai Teratas Berdasarkan Harga
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f895d9a9-5398-4e39-a5c2-2323b16c9ae1" width="640px"></p>
+
+Penerbangan yang paling sering digunakan adalah UK-706 dengan Maskapai Vistara airlines.
 
 
 
-### Analisis Multivariat Data Numerikal
 
 Hasil analisis multivariat antar fitur numerikal dapat dilihat pada diagram matriks korelasi berikut ini:
 
-<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/a51093c9-0d28-4c83-85e4-f8a0d85ec7ae" width="250px"></p>
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/a51093c9-0d28-4c83-85e4-f8a0d85ec7ae" width="640px"></p>
 <p align="center">Matriks korelasi fitur numerik</p>
 
 Dari gambar di atas, dapat dilihat bahwa durasi memiliki korelasi yang paling tinggi terhadap relasi. Fitur days_left dapat dibuang karena memiliki korelasi yang paling lemah terhadap harga.
