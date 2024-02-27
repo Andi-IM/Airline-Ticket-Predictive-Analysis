@@ -78,8 +78,9 @@ Analisis Univariat merupakan teknik menganalisis data hanya dari satu variabel. 
 
 ### Analisis Univariat Data Kategorikal
 
+#### Fitur airline
+
 ```shell
-    Fitur airline
            jumlah sampel  persentase
 Vistara           126917        42.6
 Air_India          79601        26.7
@@ -91,9 +92,9 @@ SpiceJet            9011         3.0
 
 Terdapat 6 kategori pada fitur airlines, secara berurutan dari jumlahnya yang paling banyak yaitu: Vistara, Air India, Indigo, GO FIRST, AirAsia, dan SpiceJet. 
 
-```shell
-	 Fitur flight 
+#### Fitur flight
 
+```shell
          jumlah sampel  persentase
 UK-706            3116         1.0
 UK-772            2711         0.9
@@ -112,9 +113,9 @@ SG-9923              1         0.0
 
 Terdapat lebih dari 1561 kategori untuk fitur flight.
 
-```shell
-	 Fitur source_city 
+#### Fitur source_city
 
+```shell
            jumlah sampel  persentase
 Delhi              61156        20.5
 Mumbai             60683        20.4
@@ -126,9 +127,9 @@ Chennai            38056        12.8
 
 Terdapat 6 kategori untuk fitur source_city, secara berurutan dari yang paling terbanyak yaitu Kota Delhi, Mumbai, Bangalore, Kolkata, Hyderabad, dan Chennai. Sebaran kota ini terlhat merata dengan persentase tertinggi 20.5%.
 
-```shell
-	 Fitur departure_time 
+#### Fitur departure_time
 
+```shell
                jumlah sampel  persentase
 Morning                70372        23.6
 Early_Morning          66189        22.2
@@ -140,9 +141,9 @@ Late_Night              1306         0.4
 
 Terdapat 6 kategori untuk fitur departure_time, secara berurutan dari waktu pagi, pagi awal, sore, malam, siang, dan larut malam.
 
-```shell
-	 Fitur stops 
+#### Fitur stops
 
+```shell
              jumlah sampel  persentase
 one                 249478        83.7
 zero                 36004        12.1
@@ -151,9 +152,9 @@ two_or_more          12438         4.2
 
 Pada fitur stops, sekali penerbangan adalah yang paling banyak ditemui.
 
-```shell
-	 Fitur arrival_time 
+#### Fitur arrival_time
 
+```shel
                jumlah sampel  persentase
 Night                  90702        30.4
 Evening                77217        25.9
@@ -165,9 +166,9 @@ Late_Night             13988         4.7
 
 Pada fitur arrival_time, terdapat 6 kategori yang sama dengan departure_time, namun malam yang paling banyak ditemui.
 
-```shell
-	 Fitur destination_city 
+#### Fitur destination_city
 
+```shell
            jumlah sampel  persentase
 Mumbai             58656        19.7
 Delhi              57141        19.2
@@ -179,9 +180,9 @@ Chennai            39970        13.4
 
 Untuk fitur destination_city memiliki kategori yang sama dengan source_city, namun Kota Mumbai yang paling banyak ditemui.
 
-```shell
-	 Fitur class 
+#### Fitur class
 
+```shell
           jumlah sampel  persentase
 Economy          204792        68.7
 Business          93128        31.3
