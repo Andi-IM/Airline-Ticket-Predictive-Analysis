@@ -224,9 +224,6 @@ Dari tabel di atas dapat dilihat bahwa pemilihan kota dapat mempengaruhi harga d
 
 Penerbangan yang paling sering digunakan adalah UK-706 dengan Maskapai Vistara airlines.
 
-
-
-
 Hasil analisis multivariat antar fitur numerikal dapat dilihat pada diagram matriks korelasi berikut ini:
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/a51093c9-0d28-4c83-85e4-f8a0d85ec7ae" width="640px"></p>
@@ -242,6 +239,14 @@ Pada proses *data preparation* dilakukan empat tahap persiapan data, yaitu:
 - Reduksi dimensi dengan Principal Component Analysis (PCA).
 - Pembagian dataset dengan fungsi train_test_split dari library sklearn.
 - Standarisasi.
+
+Pada proses *Data Cleaning*, secara garis besar terdapat tiga metode yang dapat digunakan antara lain sebagai berikut:
+
+- *Dropping* yaitu menghapus sejumlah data yang hilang.
+- *Imputation* yaitu mengisi kembali nilai yang hilang dengan nilai tertentu seperti nilai mean, median ataupun nilai suka-suka.
+- *Interpolation* yaitu metode menghasilkan titik-titik data baru dalam suatu jangkauan dari suatu data.   
+
+Pada dataset di proyek ini tidak ditemukan data yang kosong, maupun duplikat, namun memiliki *outlier*. Untuk mengatasi outlier kita dapat melakukan proses dropping dengan menggunakan metode IQR.
 
 ## Modeling
 
