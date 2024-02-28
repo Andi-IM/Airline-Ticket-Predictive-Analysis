@@ -6,7 +6,7 @@ Pesawat terbang merupakan mode transportasi yang digunakan untuk berpergian dari
 
 Harga tiket pesawat sangat bergantung dengan beberapa faktor, seperti maskapai yang digunakan, waktu penerbangan, kota, dan kelas penerbangan. Oleh karena itu, dengan mempertimbangkan beberapa faktor tersebut, melalui eksplorasi dataset yang tersedia, maka dapat diperkirakan harga dari tiket pesawat untuk melihat seberapa besar korelasi pengaruh faktor-faktor tersebut.
 
-Salah satu solusi yang dapat digunakan untuk memprediksi harga tiket pesawat adalah dengan menggunakan teknik analisis data yang disebut regresi. Dengan menggunakan regresi dan memasukkan faktor-faktor penentu harga tiket pesawat diharapkan dapat memprediksi harga tiket yang diinginkan [^2], [^3].
+Salah satu solusi yang dapat digunakan untuk memprediksi harga tiket pesawat adalah dengan menggunakan teknik analisis data yang disebut regresi. Dengan menggunakan regresi dan memasukkan faktor-faktor penentu harga tiket pesawat diharapkan dapat memprediksi harga tiket yang diinginkan[^2], [^3].
 
 ## Business Understanding
 
@@ -268,12 +268,14 @@ Pada data formatting, data yang bersifat kategorikal diubah menjadi numerik deng
 |3|5|2|4|2|0|5|1|2\.25|1|5955|
 |4|5|2|4|2|4|5|1|2\.33|1|5955|
 
-Data akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset testing menggunakan library sklearn.preprocesing. Rasio yang digunakan untuk pemabgian adalah 7:3 sehingga dataset menjadi:
+Data akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset testing menggunakan library sklearn.preprocesing. Rasio yang digunakan untuk pemabgian adalah 70:30 sehingga dataset menjadi:
 
-- 210.107 Dataset train
-- 90.046 Dataset test
+- 210.107 sampel untuk dataset train
+- 90.046 sampel untuk dataset test
 
 ## Modeling
+
+Kasus yang sedang dipahami pada proyek ini adalah mencari tahu hubungan antara kolom harga dengan kolom-kolom lain yang memperngaruhi harga sehingga pemodelan regresi adalah metode yang tepat.
 
 - *Random Forest*
   
