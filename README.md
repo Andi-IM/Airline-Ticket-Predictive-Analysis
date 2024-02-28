@@ -42,10 +42,10 @@ Untuk menjawab problem tersebut, maka akan dibuat predictive modeling dengan tuj
 
 Solusi yang dapat menjawab permasalahan dan tujuan adalah sebagai berikut:
 
-- Eksplorasi fitur yang terdapat pada dataset dengan menggunakan teknik analisis univariat dan multivariat. Analisis univariat digunakan untuk melihat hubungan data. Analisis multivariat dilakukan untuk melihat hubungan antar fitur. Visualisasis dengan plot juga digunakan untuk memudahkan dalam penentuan fitur mana yang berguna, salah satunya menggunakan heatmap untuk melihat korelasi dari setiap fitur yang dimiliki.
-- Mepersiapkan data dengan melakukan proses Data Wragling yang meliputi Data Gathering, Data Assessing dan Data Cleaning. 
+- Eksplorasi fitur yang terdapat pada dataset dengan menggunakan teknik analisis univariat dan multivariat. Analisis univariat digunakan untuk melihat hubungan data. Analisis multivariat dilakukan untuk melihat hubungan antar fitur. Visualisasi dengan plot juga digunakan untuk memudahkan dalam penentuan fitur mana yang berguna, salah satunya menggunakan heatmap untuk melihat korelasi dari setiap fitur yang dimiliki.
+- Mepersiapkan data meliputi Data Gathering, Data Ingesting, Data Cleaning, dan Data Formating. 
 - Menggunakan metode *Regresi* dengan memanfaatkan algoritma machine learning seperti KNN, Random Forest, Boosting, dan SVM.
-- Mengunakan ***Root Mean Squared Error*** sebagai metrik untuk melihat akurasi dari model yang akan dibangun.  
+- Melakukan evaluasi terhadap model yang dikembangkan dengan metrik evaluasi model.
 
 ## Data Understanding
 
@@ -252,6 +252,7 @@ $$ IQR = Q3 - Q1 $$
 Dimana Q1 adalah kuartil pertama dan Q3 adalah kuartil ketiga. Proyek ini terdapat outlier pada durasi penerbangan seperti yang dilihat pada gambar di bawah ini:
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ddae7578-ebd0-4d8e-bc28-f3193e37ab55" width="640px"></p>
+<p align="center">Visualisasi Boxplot untuk melihat outlier</p>
 
 Setelah outlier dihilangkan maka jumlah data berkurang menjadi 297.920 sampel.
 
@@ -278,7 +279,7 @@ Data akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset test
 
 ## Evaluation
 
-Proyek ini menggunakan machine learning dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**.
+Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^7]. 
 
 Mean Absolute Error atau disingkat MAE adalah rata-rata perbedaan absolut antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa baik apabila nilai MAE semakin kecil atau sama dengan 0. MAE didefenisikan sebagai persamaan berikut:
 
@@ -301,13 +302,13 @@ Dimana:
 - $y_i$ = nilai sebenarnya
 
 
-**Root Mean Squared Error** atau disingkat RMSE digunakan dengan menghitung nilai akar dari rata-rata kuadrat perbedaan antara nilai prediksi dengan nilai sebenarnya di dataset. RMSE didefenisikan sebagai persamaan berikut:
+**Mean Absolute Percentage Error** atau disingkat MAPE adalah rata-rata dari selisih persentase antara nliai prediksi dan nlai aktual. Dengan kata lain, MAPE menghitung berapa rata-rata kesalahan dalam prediksi sebagai presentase aktual. Semakin kecil nilai MAPE, maka model tersebut dikatakan memliki performa yang bagus. MAPE didefenisikan sebagai persamaan berikut:
 
-$$ RMSE = \sqrt{\dfrac{1}{N}\sum_{i=1}^{N}(\hat y_i - y_i)^2} $$
+$$ MAPE = \frac{1}{N} \sum_{i=1}^{N} |\frac{\hat y_i - y_i}{y_i} | \times 100% $$
 
-Keterangan:
+Dimana:
 
-- $N$ = jumlah dataset
+- N = jumlah data
 - $\hat y_i$ = nilai prediksi
 - $y_i$ = nilai sebenarnya
 
@@ -328,6 +329,15 @@ Keterangan:
    
 Tabel di bawah ini merupakan perbandingan dari masing-masing model
 
+|Model|MAE|MSE|MAPR|R2 Squared|
+|---|---|---|---|---|
+|Linear Regression|4633\.650914958173|48327818\.91012481|0\.4401630312483704|0\.9060025119113978|
+|Decision Tree Regressor|2533\.197494930205|20060289\.411819987|0\.17047683169632916|0\.9609827867765326|
+|Random Forest Regressor|2447\.7819146012303|18874886\.723902855|0\.16557343378561687|0\.9632883920686917|
+|Gradient Boosting Regressor|2963\.104288124166|24177320\.326169077|0\.21118401455007288|0\.9529751718446106|
+|AdaBoostRegressor|3634\.494092801859|33299409\.99753702|0\.30562280935598|0\.9352327300261173|
+|XGBRegressor|2041\.2474563602389|12286355\.686425244|0\.15052727511266395|0\.9761030686190323|
+
 
 
 ## Kesimpulan
@@ -347,3 +357,5 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 [^5]: Laraswati. (2022). Tahapan Data Preparation agar Data Lebih Mudah Diproses, diakses pada tanggal 28 Februari 2024, https://blog.algorit.ma/data-preparation/ 
 
 [^6]: Max Kuhn. (2013). Applied Predictive Modeling http://appliedpredictivemodeling.com/
+
+[^7]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
