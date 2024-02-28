@@ -233,30 +233,54 @@ Dari gambar di atas, dapat dilihat bahwa durasi memiliki korelasi yang paling ti
 
 ## Data Preparation
 
-Pada proses *data preparation* dilakukan empat tahap persiapan data, yaitu:
+*Data preparation* atau *data preprocessing* adalah teknik yang digunakan untuk mengubah data mentah dalam format yang berguna dan efisien[^5]. Fungsi utama dari *data preparation* adalah untuk memastikan bahwa data mentah yang akan diproses sudah akurat yang berimplikasi pada hasil analitik yang valid. Proses *data preparation* dilakukan empat tahap persiapan data, yaitu Data Gathering, Data Ingesting, Data Cleaning, dan Data Formating. Pada tahap *Data Gathering*, data diimpor dari format CSV ke dalam DataFrame dengan library Pandas. Untuk ingesting, berikut beberapa pengecekan yang dilakukan:
 
-- Encoding fitur kategori.
-- Reduksi dimensi dengan Principal Component Analysis (PCA).
-- Pembagian dataset dengan fungsi train_test_split dari library sklearn.
-- Standarisasi.
+- Mencari duplikasi data
+- Mencari missing value atau nilai yang hilang.
+- Mencari outliers atau data yang menyimpang dari distribusi data. 
 
-Pada proses *Data Cleaning*, secara garis besar terdapat tiga metode yang dapat digunakan antara lain sebagai berikut:
+ Pada tahap *Data Cleaning*, ada beberapa metode yang dapat digunakan yaitu:
 
-- *Dropping* yaitu menghapus sejumlah data yang hilang.
-- *Imputation* yaitu mengisi kembali nilai yang hilang dengan nilai tertentu seperti nilai mean, median ataupun nilai suka-suka.
-- *Interpolation* yaitu metode menghasilkan titik-titik data baru dalam suatu jangkauan dari suatu data.   
+- Membuang baris data yang memiliki nilai kosong (*Dropping*)
+- Mengisi nilai-nilai yang hilang (*Imputation*)
+- Interpolasi menghasilkan titik-titik data baru dalam jangkauan suatu data.
 
-Pada dataset di proyek ini tidak ditemukan data yang kosong, maupun duplikat, namun memiliki *outlier*. Untuk mengatasi outlier kita dapat melakukan proses dropping dengan menggunakan metode IQR.
+Pada kasus proyek ini tidak ditemukan *missing value* maupun data duplikat. Outlier merupakan sampel data yang nilainya sangat jauh dari cakupan umum data utama[^6] sehingga perlu untuk dibuang salah satunya dengan dengan metode IQR. IQR (Inter Quartile Range) adalah metode menghapus outlier yang berada di luar jangkauan kuartil pertama dan kuartil ketiga sehingga IQR dirumuskan menjadi:
+
+$$ IQR = Q3 - Q1 $$
+
+Dimana Q1 adalah kuartil pertama dan Q3 adalah kuartil ketiga. Proyek ini terdapat outlier pada durasi penerbangan seperti yang dilihat pada gambar di bawah ini:
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ddae7578-ebd0-4d8e-bc28-f3193e37ab55" width="640px"></p>
+
+Setelah outlier dihilangkan maka jumlah data berkurang menjadi 297.920 sampel.
+
+Pada data formatting, data yang bersifat kategorikal diubah menjadi numerik dengan menggunakan LabelEncoder dari library sklearn.preprocessing. Sehingga bentuk data akan menjadi seperti ini:
+
+|index|airline|source\_city|departure\_time|stops|arrival\_time|destination\_city|class|duration|days\_left|price|
+|---|---|---|---|---|---|---|---|---|---|---|
+|0|4|2|2|2|5|5|1|2\.17|1|5953|
+|1|4|2|1|2|4|5|1|2\.33|1|5953|
+|2|0|2|1|2|1|5|1|2\.17|1|5956|
+|3|5|2|4|2|0|5|1|2\.25|1|5955|
+|4|5|2|4|2|4|5|1|2\.33|1|5955|
+
+Data akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset testing menggunakan library sklearn.preprocesing. Rasio yang digunakan untuk pemabgian adalah 7:3 sehingga dataset menjadi:
+
+- 210.107 Dataset train
+- 90.046 Dataset test
 
 ## Modeling
 
 - *Random Forest*
   
-  Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*. Algoritma ini merupakan kombinasi pohon keputusan sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah..
+  Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*. Algoritma ini merupakan kombinasi pohon keputusan sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah.
 
 ## Evaluation
 
-Proyek ini menggunakan machine learning dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati.
+Proyek ini menggunakan machine learning dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**.
+
+Mean Absolute Error atau disingkat MAE adalah metrik populer, unit skor error  
 
 Root Mean Squared Error atau disingkat RMSE digunakan dengan menghitung nilai akar dari rata-rata kuadrat perbedaan antara nilai prediksi dengan nilai sebenarnya di dataset. RMSE didefenisikan sebagai persamaan berikut:
 
@@ -285,3 +309,7 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 [^3]: Li, Xinshu. (2022). Prediction and Analysis of Housing Price Based on the Generalized Linear Regression Model. Computational Intelligence and Neuroscience. 2022. 1-9. 10.1155/2022/3590224.
 
 [^4]: C. Chatfield, “Exploratory data analysis,” European Journal of Operational Research, vol. 23, no. 1, pp. 5–13, Jan. 1986, doi: https://doi.org/10.1016/0377-2217(86)90209-2.
+
+[^5]: Laraswati. (2022). Tahapan Data Preparation agar Data Lebih Mudah Diproses, diakses pada tanggal 28 Februari 2024, https://blog.algorit.ma/data-preparation/ 
+
+[^6]: Max Kuhn. (2013). Applied Predictive Modeling http://appliedpredictivemodeling.com/
