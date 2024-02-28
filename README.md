@@ -275,15 +275,33 @@ Data akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset test
 
 ## Modeling
 
-Kasus yang sedang dipahami pada proyek ini adalah mencari tahu hubungan antara kolom harga dengan kolom-kolom lain yang memperngaruhi harga sehingga pemodelan regresi adalah metode yang tepat.
+Kasus yang sedang dipahami pada proyek ini adalah mencari tahu hubungan antara kolom harga dengan kolom-kolom lain yang memperngaruhi harga sehingga pemodelan regresi adalah metode yang tepat. Regresi adalah proses indetifikasi relasi dan pengaruhnya pada nilai-nilai objek yang bertujuan untuk menemukan suatu fungsi yang memodelkan data dengan meminimalkan error[^8]. 
 
-- *Random Forest*
+Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan dan diuji pada proyek ini:
+
+  - **Regresi Linear**
+
+    Regresi Linar adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan data lain yang terkait dan diektahui dimana secara matematis dimodelkan sebagai persamaan linear.
+
+  - **Decision Tree**
+  
+  - **Random Forest**
   
   Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*. Algoritma ini merupakan kombinasi pohon keputusan sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah.
 
+ - **Boosting**
+
+   Boosting adalah algoritma yang bekerja dengan menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). Algoritma ini muncul dari gagasan mengenai apakah algoritma yang sederhana seperti regresi linear dan decision tree dapat dimodifikasi untuk dapat meningkatkan performa. Ada beberapa algoritma boosting yang akan digunakan pada proyek ini diantaranya:
+
+     - Gradient Boosting
+       
+     - AdaBoost
+     - XG Boost
+   
+  
 ## Evaluation
 
-Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^8]. 
+Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^9]. 
 
 Mean Absolute Error atau disingkat MAE adalah rata-rata perbedaan absolut antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa baik apabila nilai MAE semakin kecil atau sama dengan 0. MAE didefenisikan sebagai persamaan berikut:
 
@@ -374,4 +392,6 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 
 [^7]: Chaudary R.A. (2023). An Introduction to Data Encoding and Decoding in Data Science. Diakses pada 28 Februari 2024, https://www.sitepoint.com/data-encoding-decoding-data-science-introduction.
 
-[^8]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
+[^8]: Suyanto. (2022). Machine Learning Tingkat Dasar dan Lanjut.
+
+[^9]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
