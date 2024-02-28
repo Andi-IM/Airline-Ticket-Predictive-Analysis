@@ -280,21 +280,55 @@ Data akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset test
 
 Proyek ini menggunakan machine learning dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**.
 
-Mean Absolute Error atau disingkat MAE adalah metrik populer, unit skor error  
+Mean Absolute Error atau disingkat MAE adalah rata-rata perbedaan absolut antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa baik apabila nilai MAE semakin kecil atau sama dengan 0. MAE didefenisikan sebagai persamaan berikut:
 
-Root Mean Squared Error atau disingkat RMSE digunakan dengan menghitung nilai akar dari rata-rata kuadrat perbedaan antara nilai prediksi dengan nilai sebenarnya di dataset. RMSE didefenisikan sebagai persamaan berikut:
+$$ MAE = \frac{1}{N} \sum_{i=1}^{N} |y_i - \hat y_i| $$
 
-$$
-\begin{align}
-RMSE = \sqrt{\dfrac{1}{n}\Sigma(\hat y_i - y_i)^2}
-\end{align}
-$$
+Dimana:
 
-$Keterangan:$
+- N = jumlah data
+- $\hat y_i$ = nilai prediksi
+- $y_i$ = nilai sebenarnya
+
+**Mean Squared Error** atau disingkat MSE adalah rata-rata dari perbedaan kuadrat antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa yang baik apabila nilai MSE semakin kecil atau sama dengan 0. MSE MSE didefenisikan sebagai persamaan berikut:
+
+$$ MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat y_i)^2 $$
+
+Dimana:
+
+- N = jumlah data
+- $\hat y_i$ = nilai prediksi
+- $y_i$ = nilai sebenarnya
+
+
+**Root Mean Squared Error** atau disingkat RMSE digunakan dengan menghitung nilai akar dari rata-rata kuadrat perbedaan antara nilai prediksi dengan nilai sebenarnya di dataset. RMSE didefenisikan sebagai persamaan berikut:
+
+$$ RMSE = \sqrt{\dfrac{1}{N}\sum_{i=1}^{N}(\hat y_i - y_i)^2} $$
+
+Keterangan:
 
 - $N$ = jumlah dataset
 - $\hat y_i$ = nilai prediksi
 - $y_i$ = nilai sebenarnya
+
+R<sup>2</sup> menjelaskan sejauh mana varians suatu variabel menjelaskan varians variabel lainnya. Dengan kata lain, R<sup>2</sup> mengukur proporsi varians variabel terikat yang dijelaskan oleh variabel bebas. R<sup>2</sup> adalah metrik populer yang digunakan dalam mengidentifikasi akurasi model dengan nilai 0 hingga 1, semakin mendekati 1 berarti model regresi memiliki performa yang baik dan sebaliknya jika mendekati 0 berarti model tidak memiliki performa yang baik. R<sup>2</sup> didefinisikan sebagai persamaan berikut:
+
+$$ R^2 = 1 - \frac{SSE}{SST} $$
+
+$$ SSE = \sum_{i=1}^{N} (\hat y_i - y_i)^2 $$
+
+$$ SST = \sum_{i=1}^{N} (\bar y_i - y_i)^2 $$
+
+Keterangan:
+- SSE = Sum of Squared Error, adalah jumlah kuadrat dari perbedaan antara nilai prediksi dan nilai sebenarnya
+- SST = Total Sum of Squares, adalah jumlah kuardat dari perbedaan antara nilai prediksi dan rata-rata nilai sebenarnya.
+- N = jumlah data
+- $\hat y_i$ = nilai prediksi
+- $y_i$ = nilai sebenarnya
+   
+Tabel di bawah ini merupakan perbandingan dari masing-masing model
+
+
 
 ## Kesimpulan
 
