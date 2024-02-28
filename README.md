@@ -330,15 +330,25 @@ Keterangan:
 Tabel di bawah ini merupakan perbandingan dari masing-masing model
 
 |Model|MAE|MSE|MAPR|R2 Squared|
-|---|---|---|---|---|
+|:---|---|---|---|---|
 |Linear Regression|4633\.650914958173|48327818\.91012481|0\.4401630312483704|0\.9060025119113978|
 |Decision Tree Regressor|2533\.197494930205|20060289\.411819987|0\.17047683169632916|0\.9609827867765326|
 |Random Forest Regressor|2447\.7819146012303|18874886\.723902855|0\.16557343378561687|0\.9632883920686917|
 |Gradient Boosting Regressor|2963\.104288124166|24177320\.326169077|0\.21118401455007288|0\.9529751718446106|
 |AdaBoostRegressor|3634\.494092801859|33299409\.99753702|0\.30562280935598|0\.9352327300261173|
-|XGBRegressor|2041\.2474563602389|12286355\.686425244|0\.15052727511266395|0\.9761030686190323|
+|XGBRegressor|**2041\.2474563602389**|**12286355\.686425244**|**0\.15052727511266395**|**0\.9761030686190323**|
 
+Berdasarkan tabel di atas dapat dilihat bahwa XGB Regressor menampilkan performa yang paling baik dengan nilai R<sup>2</sup> sebesar 0.98.
 
+Secara lebih jauh perbandingan metrik untuk masing-masing model dapat dilihat pada gambar berikut ini.
+
+![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/d204a53a-ac6e-46f1-8b1f-4677a74d4a20)
+
+![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/6da530e3-6906-494b-9c80-622afd941a53)
+
+![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ae0c3d4c-26cc-48bb-a287-c3e8aca61091)
+
+![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ff2640eb-1763-4e2f-a079-0635ee4cf7a6)
 
 ## Kesimpulan
 
