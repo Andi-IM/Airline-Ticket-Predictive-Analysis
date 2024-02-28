@@ -233,9 +233,11 @@ Dari gambar di atas, dapat dilihat bahwa durasi memiliki korelasi yang paling ti
 
 ## Data Preparation
 
-*Data preparation* atau *data preprocessing* adalah teknik yang digunakan untuk mengubah data mentah dalam format yang berguna dan efisien[^5]. Fungsi utama dari *data preparation* adalah untuk memastikan bahwa data mentah yang akan diproses sudah akurat yang berimplikasi pada hasil analitik yang valid. Proses *data preparation* dilakukan empat tahap persiapan data, yaitu Data Gathering, Data Ingesting, Data Cleaning, dan Data Formating. Pada tahap *Data Gathering*, data diimpor dari format CSV ke dalam DataFrame dengan library Pandas. Untuk ingesting, berikut beberapa pengecekan yang dilakukan:
+*Data preparation* atau *data preprocessing* adalah teknik yang digunakan untuk mengubah data mentah dalam format yang berguna dan efisien[^5]. Fungsi utama dari *data preparation* adalah untuk memastikan bahwa data mentah yang akan diproses sudah akurat yang berimplikasi pada hasil analitik yang valid. Proses *data preparation* dilakukan empat tahap persiapan data, yaitu Data Ingestion, Data Cleaning, dan Data Formating. Pada tahap *Data Ingestion*, berikut beberapa pengecekan yang dilakukan:
 
-- Mencari duplikasi data
+- Mengimport data dari format CSV ke bentuk DataFrame dengan library Pandas.
+- Membaca informasi data.
+- Mencari duplikasi data.
 - Mencari missing value atau nilai yang hilang.
 - Mencari outliers atau data yang menyimpang dari distribusi data. 
 
@@ -256,7 +258,7 @@ Dimana Q1 adalah kuartil pertama dan Q3 adalah kuartil ketiga. Proyek ini terdap
 
 Setelah outlier dihilangkan maka jumlah data berkurang menjadi 297.920 sampel.
 
-Pada data formatting, data yang bersifat kategorikal diubah menjadi numerik dengan menggunakan LabelEncoder dari library sklearn.preprocessing. Sehingga bentuk data akan menjadi seperti ini:
+Pada data formatting, data yang bersifat kategorikal diubah menjadi numerik dengan tujuan untuk mempersiapkan data yang dapat dijalankan oleh model machine learning dengan optimal dan mengamankan data untuk mencegah akses yang tak diizinkan[^7]. Salah satu bentuk teknik yang digunakan adalah Label Encoding yang mengubah kategori secara secara berurutan sesuai dengan posisinya. Library yang dapat digunakan adalah LabelEncoder dari sklearn. Sehingga bentuk data yang telah diubah menjadi seperti ini:
 
 |index|airline|source\_city|departure\_time|stops|arrival\_time|destination\_city|class|duration|days\_left|price|
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -279,7 +281,7 @@ Data akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset test
 
 ## Evaluation
 
-Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^7]. 
+Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^8]. 
 
 Mean Absolute Error atau disingkat MAE adalah rata-rata perbedaan absolut antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa baik apabila nilai MAE semakin kecil atau sama dengan 0. MAE didefenisikan sebagai persamaan berikut:
 
@@ -368,4 +370,6 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 
 [^6]: Max Kuhn. (2013). Applied Predictive Modeling http://appliedpredictivemodeling.com/
 
-[^7]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
+[^7]: Chaudary R.A. (2023). An Introduction to Data Encoding and Decoding in Data Science. Diakses pada 28 Februari 2024, https://www.sitepoint.com/data-encoding-decoding-data-science-introduction.
+
+[^8]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
