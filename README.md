@@ -302,8 +302,22 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
       
   - **Random Forest**
   
-    Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*. Algoritma ini merupakan kombinasi pohon keputusan sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah.
+    Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*[^13]. Algoritma ini merupakan kombinasi dari decision tree sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah. Meskipun ini adalah penyempurnaan dari algoritma decision tree, algoritma random forest juga memiliki beberapa kelebihan dan kekurangan antara lain[^14]:
 
+   Kelebihan Random Forest:
+
+   - Robustness: Random Forest dapat menangani data yang mengandung kesalahan (noise) dan data tidak normal (outlier) dengan baik. Hal ini membuatnya tidak mudah overfit, dan memberikan hasil prediksi yang baik pada data baru. 
+   - Akurasi Tinggi: Random Forest merupakan algoritma machine learning yang paling akurat. Ia dapat digunakan untuk masalah klasifikasi dan regresi, serta dapat bekerja denagn baik pada data kategorikal dan data kontinu.
+   - Cepat: Meskipun tergolong pada algoritma kompleks, Random Forest bekerja dengan cepat dan dapat menangani kumpulan data yang besar. Proses *Training*-nya dapat dipercepat dengan proses paralel. 
+   - Memberikan informasi fitur penting: Random Forest menyediakan ukuran *feature importance*, yang berguna untuk memilih fitur penting dan memahami data.
+
+   Kekurangan Rnadom Forest:
+
+   - Masih bisa overfitting: Meskipun algoritma ini lebih jarang terjadi overfitting dibandingkan Decision Tree tunggal, hal ini tetap bisa terjadi jika jumlah pohon terlalu banyak atau pohon terlalu *deep* dan kompleks.
+   - Multi interpretasi: Random Forest lebih sulit dipahami dibandingkan Decision Tree tunggal karena terdiri dari banyak phon. Hal ini membuat proses memahami bagaimana algoritma menghasilkan prediksi tertentu menjadi lebih rumit. 
+   - Waktu training yang lebih lama, jika jumlah dan kedalaman pohon yang tinggi.
+   - Penggunaan memori yang lebih besar karena ia menyimpan banyak pohon. Ini akan menjadi masalah jika ukuran dataset sangat besar.  
+     
  - **Boosting**
 
    Boosting adalah algoritma yang bekerja dengan menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). Algoritma ini muncul dari gagasan mengenai apakah algoritma yang sederhana seperti regresi linear dan decision tree dapat dimodifikasi untuk dapat meningkatkan performa. Ada beberapa algoritma boosting yang akan digunakan pada proyek ini diantaranya:
@@ -417,4 +431,8 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 
 [^12]: Educba (2023). Decision Tree Advantages and Disadvantages. diakses pada 29 Februari 2024. https://www.educba.com/decision-tree-advantages-and-disadvantages/
 
-[^13]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
+[^13]: Kelleher, John D, et al. "Machine Learning for Predictive Data Analytics". MIT Press. 2020. Tersedia: [tautan informasi buku](https://machinelearningbook.com/).
+
+[^14]: Wang Y. (2023), "What Are The Advantages And Disadvantages Of Random Forest?". Rebelion Research. Tersedia: [tautan informasi](https://www.rebellionresearch.com/what-are-the-advantages-and-disadvantages-of-random-forest).
+
+[^X]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
