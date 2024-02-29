@@ -279,53 +279,52 @@ Kasus yang sedang dipahami pada proyek ini adalah mencari tahu hubungan antara k
 
 Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan dan diuji pada proyek ini:
 
-  - **Regresi Linear**
+- **Regresi Linear**
 
     Regresi Linar adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan data lain yang terkait dan diektahui dimana secara matematis dimodelkan sebagai persamaan linear. Regresi linear mencoba untuk memodelkan hubungan antara dua variabel dengan mencocokkan persama linier dengan data yang diamati[^9]. Satu variabel dianggap sebagai penjelas dan yang lainnya dianggap sebagai variabel dependen. Regresi linear memiliki keuntungan untuk permasalahan yang memiliki hubungan linear karena algoritma ini adalah yang paling kompleks dibandingkan yang lain yang juga mencoba menemukan hubungan antar variabel independen dan dependen.  Regresi Linear akan menjadi kelemahan jika hubungan antar variabel tidak linier. Selain itu hasil prediksi regresi linear merupakan nilai estimasi sehingga kemungkinan tidak sesuainya sangat tinggi. 
 
-  - **Decision Tree**
+- **Decision Tree**
 
-    Decision Tree merupakan satu dari banyaknya pendekatan praktikal *supervised learning*. Metode Decision Tree ini dapat digunakan untuk tugas regresi maupun tugas klasifikasi dengan praktis. ALgoritma ini mengubah fakta yang sangat besar menjadi pohon keputusan yang merepresentasikan aturan. Pohon keputusan ini juga berguna untuk mengeksplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dan sebuah variabel target[^10],[^11]. Decision tree memiliki kelebihan dan kelemahan sebagai berikut[^12]: 
+  Decision Tree merupakan satu dari banyaknya pendekatan praktikal *supervised learning*. Metode Decision Tree ini dapat digunakan untuk tugas regresi maupun tugas klasifikasi dengan praktis. ALgoritma ini mengubah fakta yang sangat besar menjadi pohon keputusan yang merepresentasikan aturan. Pohon keputusan ini juga berguna untuk mengeksplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dan sebuah variabel target[^10],[^11]. Decision tree memiliki kelebihan dan kelemahan sebagai berikut[^12]: 
 
-    Kelebihan Decision Tree:
+  Kelebihan Decision Tree:
 
-    - Dapat digunakan untuk masalah klasifikasi dan regresi dengan baik.
-    - Dapat menangkap hubungan non-linear
-    - Dapat menangkap informasi tanpa harus melakukan transformasi data.
-    - Berguna dalam eksplorasi data. 
-    
-    Kekurangan Decision Tree:
+  - Dapat digunakan untuk masalah klasifikasi dan regresi dengan baik.
+  - Dapat menangkap hubungan non-linear
+  - Dapat menangkap informasi tanpa harus melakukan transformasi data.
+  - Berguna dalam eksplorasi data. 
 
-    - Kurang mampu menggeneralisir apabila data berjumlah jutaan
-    - Kurang cocok untuk dataset dengan banyak fitur
-    - Mudah overfit
+  Kekurangan Decision Tree:
+
+  - Kurang mampu menggeneralisir apabila data berjumlah jutaan
+  - Kurang cocok untuk dataset dengan banyak fitur
+  - Mudah overfit
       
-  - **Random Forest**
+- **Random Forest**
   
-    Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*[^13]. Algoritma ini merupakan kombinasi dari decision tree sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah. Meskipun ini adalah penyempurnaan dari algoritma decision tree, algoritma random forest juga memiliki beberapa kelebihan dan kekurangan antara lain[^14]:
+  Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*[^13]. Algoritma ini merupakan kombinasi dari decision tree sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah. Meskipun ini adalah penyempurnaan dari algoritma decision tree, algoritma random forest juga memiliki beberapa kelebihan dan kekurangan antara lain[^14]:
 
-   Kelebihan Random Forest:
+  Kelebihan Random Forest:
 
-   - Robustness: Random Forest dapat menangani data yang mengandung kesalahan (noise) dan data tidak normal (outlier) dengan baik. Hal ini membuatnya tidak mudah overfit, dan memberikan hasil prediksi yang baik pada data baru. 
-   - Akurasi Tinggi: Random Forest merupakan algoritma machine learning yang paling akurat. Ia dapat digunakan untuk masalah klasifikasi dan regresi, serta dapat bekerja denagn baik pada data kategorikal dan data kontinu.
-   - Cepat: Meskipun tergolong pada algoritma kompleks, Random Forest bekerja dengan cepat dan dapat menangani kumpulan data yang besar. Proses *Training*-nya dapat dipercepat dengan proses paralel. 
-   - Memberikan informasi fitur penting: Random Forest menyediakan ukuran *feature importance*, yang berguna untuk memilih fitur penting dan memahami data.
+  - Robustness Random Forest dapat menangani data yang mengandung kesalahan (noise) dan data tidak normal (outlier) dengan baik. Hal ini membuatnya tidak mudah overfit, dan memberikan hasil prediksi yang baik pada data baru. 
+  - Akurasi Tinggi: Random Forest merupakan algoritma machine learning yang paling akurat. Ia dapat digunakan untuk masalah klasifikasi dan regresi, serta dapat bekerja denagn baik pada data kategorikal dan data kontinu.
+  - Cepat: Meskipun tergolong pada algoritma kompleks, Random Forest bekerja dengan cepat dan dapat menangani kumpulan data yang besar. Proses *Training*\-nya dapat dipercepat dengan proses paralel. 
+  - Memberikan informasi fitur penting: Random Forest menyediakan ukuran *feature importance*, yang berguna untuk memilih fitur penting dan memahami data.
 
    Kekurangan Rnadom Forest:
 
-   - Masih bisa overfitting: Meskipun algoritma ini lebih jarang terjadi overfitting dibandingkan Decision Tree tunggal, hal ini tetap bisa terjadi jika jumlah pohon terlalu banyak atau pohon terlalu *deep* dan kompleks.
-   - Multi interpretasi: Random Forest lebih sulit dipahami dibandingkan Decision Tree tunggal karena terdiri dari banyak phon. Hal ini membuat proses memahami bagaimana algoritma menghasilkan prediksi tertentu menjadi lebih rumit. 
-   - Waktu training yang lebih lama, jika jumlah dan kedalaman pohon yang tinggi.
-   - Penggunaan memori yang lebih besar karena ia menyimpan banyak pohon. Ini akan menjadi masalah jika ukuran dataset sangat besar.  
+  - Masih bisa overfitting: Meskipun algoritma ini lebih jarang terjadi overfitting dibandingkan Decision Tree tunggal, hal ini tetap bisa terjadi jika jumlah pohon terlalu banyak atau pohon terlalu *deep* dan kompleks.
+  - Multi interpretasi: Random Forest lebih sulit dipahami dibandingkan Decision Tree tunggal karena terdiri dari banyak phon. Hal ini membuat proses memahami bagaimana algoritma menghasilkan prediksi tertentu menjadi lebih rumit. 
+  - Waktu training yang lebih lama, jika jumlah dan kedalaman pohon yang tinggi.
+  - Penggunaan memori yang lebih besar karena ia menyimpan banyak pohon. Ini akan menjadi masalah jika ukuran dataset sangat besar.  
      
- - **Boosting**
+- **Boosting**
 
-   Boosting adalah algoritma yang bekerja dengan menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). Algoritma ini muncul dari gagasan mengenai apakah algoritma yang sederhana seperti regresi linear dan decision tree dapat dimodifikasi untuk dapat meningkatkan performa. Ada beberapa algoritma boosting yang akan digunakan pada proyek ini diantaranya:
+  Boosting adalah algoritma yang bekerja dengan menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). Algoritma ini muncul dari gagasan mengenai apakah algoritma yang sederhana seperti regresi linear dan decision tree dapat dimodifikasi untuk dapat meningkatkan performa. Ada beberapa algoritma boosting yang akan digunakan pada proyek ini diantaranya:
 
-     - Gradient Boosting
-       
-     - AdaBoost
-     - XG Boost
+  - Gradient Boosting     
+  - AdaBoost
+  - XG Boost
    
   
 ## Evaluation
