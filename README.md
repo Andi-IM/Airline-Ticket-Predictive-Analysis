@@ -427,9 +427,27 @@ Secara lebih jauh perbandingan metrik untuk masing-masing model dapat dilihat pa
 
 ![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ff2640eb-1763-4e2f-a079-0635ee4cf7a6)
 
+Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pesawat. Seperti yang dapat dilihat pada tabel di bawah ini:
+
+|index|y\_true|Linear Regression|Decision Tree Regressor|Random Forest Regressor|Gradient Boosting Regressor|AdaBoostRegressor|XGBRegressor|
+|---|---|---|---|---|---|---|---|
+|0|7426|5943\.08|5295\.59|5244\.35|4906\.64|5559\.15|5356\.7001953125|
+|1|4179|5348\.5|5295\.59|5244\.35|5063\.07|5559\.15|5105\.1201171875|
+|2|6542|2259\.42|5295\.59|5336\.71|4757\.33|5559\.15|5294\.39990234375|
+|3|9105|9936\.22|11302\.31|11373\.39|9946\.43|10731\.9|10736\.3603515625|
+|4|8011|5396\.36|5295\.59|5336\.71|4696\.73|5559\.15|6237\.490234375|
+
+Untuk mempermudah analisis, kita bisa lihat perbandingannya pada visualisasi di bawah ini:
+
+![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f4482f7e-aff5-4d8d-9067-f06cc24af205)
+
+Berdasarkan hasil evaluasi, dapat dilihat bahwa prediksi harga tiket pesawat dengan Extreme Gradient Boost Regressor memberikan hasil yang paling mendekati y_true dapat dilihat dari visualisasi di atas yang mendominasi. 
+
 ## Kesimpulan
 
-Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random forest memiliki nilai error yang kecil.
+Dari hasil evaluasi diatas, dapat disimpulkan bahwa: 
+
+Angka..
 
 ## References
 
