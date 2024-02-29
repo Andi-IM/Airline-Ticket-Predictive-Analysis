@@ -6,7 +6,7 @@ Pesawat terbang merupakan mode transportasi yang digunakan untuk berpergian dari
 
 Harga tiket pesawat sangat bergantung dengan beberapa faktor, seperti maskapai yang digunakan, waktu penerbangan, kota, dan kelas penerbangan. Oleh karena itu, dengan mempertimbangkan beberapa faktor tersebut, melalui eksplorasi dataset yang tersedia, maka dapat diperkirakan harga dari tiket pesawat untuk melihat seberapa besar korelasi pengaruh faktor-faktor tersebut.
 
-Salah satu solusi yang dapat digunakan untuk memprediksi harga tiket pesawat adalah dengan menggunakan teknik analisis data yang disebut regresi. Dengan menggunakan regresi dan memasukkan faktor-faktor penentu harga tiket pesawat diharapkan dapat memprediksi harga tiket yang diinginkan[^2], [^3].
+Salah satu solusi yang dapat digunakan untuk memprediksi harga tiket pesawat adalah dengan menggunakan teknik analisis data yang disebut regresi. Dengan menggunakan regresi dan memasukkan faktor-faktor penentu harga tiket pesawat diharapkan dapat memprediksi harga tiket yang diinginkan[^2],[^3].
 
 ## Business Understanding
 
@@ -72,7 +72,7 @@ Detail dari file ini adalah sebagai berikut:
 
 ### Explanatory Data Analysis
 
-Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (*Explanatory Data Analysis*) atau disingkat EDA [^4]. EDA meliputi Analisis Data Univariat dan Multivariat.
+Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (*Explanatory Data Analysis*) atau disingkat EDA[^4]. EDA meliputi Analisis Data Univariat dan Multivariat.
 
 Analisis Univariat merupakan teknik menganalisis data hanya dari satu variabel. Variabel dalam kumpulan dataset mengacu pada satu fitur/kolom. Proses ini dapat dilakukan dengan menganalisis grafik atau non grafik dengan menggunakan metode statistika. Analisis Multivariat membandingkan dua atau lebih variabel. Analisis dengan teknik ini dapat mengetahui bagaimana satu fitur/kolom dapat mempengaruhi fitur lainnya.
 
@@ -281,10 +281,25 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
 
   - **Regresi Linear**
 
-    Regresi Linar adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan data lain yang terkait dan diektahui dimana secara matematis dimodelkan sebagai persamaan linear.
+    Regresi Linar adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan data lain yang terkait dan diektahui dimana secara matematis dimodelkan sebagai persamaan linear. Regresi linear mencoba untuk memodelkan hubungan antara dua variabel dengan mencocokkan persama linier dengan data yang diamati[^9]. Satu variabel dianggap sebagai penjelas dan yang lainnya dianggap sebagai variabel dependen. Regresi linear memiliki keuntungan untuk permasalahan yang memiliki hubungan linear karena algoritma ini adalah yang paling kompleks dibandingkan yang lain yang juga mencoba menemukan hubungan antar variabel independen dan dependen.  Regresi Linear akan menjadi kelemahan jika hubungan antar variabel tidak linier. Selain itu hasil prediksi regresi linear merupakan nilai estimasi sehingga kemungkinan tidak sesuainya sangat tinggi. 
 
   - **Decision Tree**
-  
+
+    Decision Tree merupakan satu dari banyaknya pendekatan praktikal *supervised learning*. Metode Decision Tree ini dapat digunakan untuk tugas regresi maupun tugas klasifikasi dengan praktis. ALgoritma ini mengubah fakta yang sangat besar menjadi pohon keputusan yang merepresentasikan aturan. Pohon keputusan ini juga berguna untuk mengeksplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dan sebuah variabel target[^10],[^11]. Decision tree memiliki kelebihan dan kelemahan sebagai berikut[^12]: 
+
+    Kelebihan Decision Tree:
+
+    - Dapat digunakan untuk masalah klasifikasi dan regresi dengan baik.
+    - Dapat menangkap hubungan non-linear
+    - Dapat menangkap informasi tanpa harus melakukan transformasi data.
+    - Berguna dalam eksplorasi data. 
+    
+    Kekurangan Decision Tree:
+
+    - Kurang mampu menggeneralisir apabila data berjumlah jutaan
+    - Kurang cocok untuk dataset dengan banyak fitur
+    - Mudah overfit
+      
   - **Random Forest**
   
     Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*. Algoritma ini merupakan kombinasi pohon keputusan sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah.
@@ -301,7 +316,7 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
   
 ## Evaluation
 
-Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^9]. 
+Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^13]. 
 
 Mean Absolute Error atau disingkat MAE adalah rata-rata perbedaan absolut antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa baik apabila nilai MAE semakin kecil atau sama dengan 0. MAE didefenisikan sebagai persamaan berikut:
 
@@ -394,4 +409,12 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 
 [^8]: Suyanto. (2022). Machine Learning Tingkat Dasar dan Lanjut.
 
-[^9]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
+[^9]: Iqbal M. (2019). Pengertian Regresi Linear serta Keuntungan dan Kerugian.
+
+[^10]: Gurucharan M. K. (2020). Machine Learning Basics: Decision Tree Regression. Diakses 29 Februari 2024. https://towardsdatascience.com/machine-learning-basics-decision-tree-regression-1d73ea003fda
+
+[^11]: Pangestu, A. (2020). Application Based of E-Commerce Poverty Prediction Data Processing. 6(2), pp. 1729-1740.
+
+[^12]: Educba (2023). Decision Tree Advantages and Disadvantages. diakses pada 29 Februari 2024. https://www.educba.com/decision-tree-advantages-and-disadvantages/
+
+[^13]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
