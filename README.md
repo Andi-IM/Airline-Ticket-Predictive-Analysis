@@ -324,20 +324,39 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
   
   - AdaBoost
  
-    Adaboost adalah metode adaptive boosting yang diperkenalkan oelh Freud dan Schapire. Adaboost bekerja mengobservasi bobot dan memberi tugas bobot yang tinggi ke model yang belum dapat memahami dataset secara iteratif hingga model memiliki akurasi yang diinginkan. Kelebihan dari AdaBoost yaitu relatif lebih mudah untuk diimplementasikan dan waktu pengujian yang relatif cepat sehingga cocok dipakai dalam implementasi kondisi *real time*. Kekurangan dari AdaBoost yaitu membutuhkan hyperparameter tuning yang tepat untuk memberikan performa yang baik.
+    Adaboost adalah metode adaptive boosting yang diperkenalkan oelh Freud dan Schapire (1995)[^15]. Adaboost bekerja mengobservasi bobot dan memberi tugas bobot yang tinggi ke model yang belum dapat memahami dataset secara iteratif hingga model memiliki akurasi yang diinginkan. Kelebihan dari AdaBoost yaitu relatif lebih mudah untuk diimplementasikan dan waktu pengujian yang relatif cepat sehingga cocok dipakai dalam implementasi kondisi *real time*. Kekurangan dari AdaBoost yaitu membutuhkan hyperparameter tuning yang tepat untuk memberikan performa yang baik.
 
   - Gradient Boosting
     
-    Gradient Boosting adalah salah satu algoritma boosting, dimana menghasilkan model prediksi dari *weak learner* berbentuk decision tree. Gradient boosting melatih decision tree untuk meminimalkan *loss*.  
-    
-  
+    Gradient Boosting adalah salah satu algoritma *boosting*, dimana menghasilkan model prediksi dari *weak learner* berbentuk decision tree. Gradient boosting melatih decision tree untuk meminimalkan *loss*[^16]. Algoritma ini menggunakan pendekatan iteratif, di mana setiap iterasi bertujuan untuk meningkatkan model sebelumnya dengan menambahkan model baru. tahapan yang dilakukan pada algoritma Gradient Boosting adalah sebagai berikut:
+     
+    1. **Inisialisasi model**: Tahap pertama adalah inisialisasi model, model awal dibuat sebagai model konstan yang merupakan rata-rata atau median dari target variabel.
+    2. **Membuat weak model**: Tahap ini weak model dibuat sebagai model yang mampu memprediksi eror dari model sebelumnya. Biasanya berupa model decision tree yang memiliki satu atau dua percabangan.
+    3. **Menghitung residual error**: Setelah model lemah dibuat, residual error dihutung sebagai selisih antara nilai prediksi dari model sebelumnya dan nilai asli dari target variable.
+    4. **Menyusun kembali data training**: data training diubah dengan menggunakan residual error sebagai target variable.
+    5. **Membuat model baru**: Model baru dibuat dengan memprediksi residual error yang dihasilkan dari model sebelunya.
+    6. **Menggabungkan model**: Model baru yang dibuat pada tahap sebelunmnya digabungkan dengan model sebelumnya untuk membentuk model yang lebih baik.
+    7. **Iterasi berulang**: Tahap di atas dilakukan kembali berulang-ulang hingga mencapai kondisi berhenti yang diharapkan, seperti jumlah iterasi yang ditentukan atau tidak terdapat perubahan nilai residual error yang signifikan.
+   
+    Kelebihan Gradient Boosting:
+
+    - Akurasi yang tinggi
+    - Tidak memerlukan persyaratan yang ketat
+    - Kecepatan komputasi yang cepat
+
+    Kekurangan Gradient Boosting
+
+    - Memerlukan tuning yang cermat
+    - Mudah overfit
+    - Memerlukan data yang banyak 
+         
   - XG Boost
 
-    Extreme Gradient Boosting (XGBoost) adlaah pengembangan lebih lanjut dari Gradient Boosting. Sama halnya dengan Gradient Boosting, XG Boost juga menggunakan algoritma Decision Tree sebagai *base learner* dan membangun ekspansi aditif dari objective function untuk meminimalkan *loss*. Namun, XGBoost memiliki skalabilitas yang lebih baik dan mampu melakukan optimasi lebih cepat dariapda Gradient Boosting[^X].
+    Extreme Gradient Boosting (XGBoost) adlaah pengembangan lebih lanjut dari Gradient Boosting. Sama halnya dengan Gradient Boosting, XG Boost juga menggunakan algoritma Decision Tree sebagai *base learner* dan membangun ekspansi aditif dari objective function untuk meminimalkan *loss*. Namun, XGBoost memiliki skalabilitas yang lebih baik dan mampu melakukan optimasi lebih cepat dariapda Gradient Boosting[^17].
   
 ## Evaluation
 
-Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^13]. 
+Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^18]. 
 
 Mean Absolute Error atau disingkat MAE adalah rata-rata perbedaan absolut antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa baik apabila nilai MAE semakin kecil atau sama dengan 0. MAE didefenisikan sebagai persamaan berikut:
 
@@ -442,5 +461,10 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 
 [^14]: Wang Y. (2023), "What Are The Advantages And Disadvantages Of Random Forest?". Rebelion Research. Tersedia: [tautan informasi](https://www.rebellionresearch.com/what-are-the-advantages-and-disadvantages-of-random-forest).
 
+[^15]: Kelleher, John D, et al. "Machine Learning for Predictive Data Analytics". MIT Press. 2020. Tersedia: tautan informasi buku.
 
-[^X]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
+[^16]: Trivusi. (2023) Gradient Boosting: Pengeritan, Cara Kerja dan Kegunaannya. Diaskes 29 Januari 2024. Terseida: https://www.trivusi.web.id/2023/03/algoritma-gradient-boosting.html
+
+[^17]: Chen,  T.,  &  Guestrin,  C.  (2016).  XGBoost:  A  Scalable  Tree  Boosting  System. Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 785–794. https://doi.org/10.1145/2939672.2939785
+
+[^18]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
