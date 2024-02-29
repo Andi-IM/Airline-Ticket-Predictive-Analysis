@@ -59,7 +59,7 @@ Detail dari file ini adalah sebagai berikut:
 
 ### Dataset memiliki fitur-fitur sebagai berikut:
 
-- Airline: Nama Perusahaan Penerbangan.
+- Airline: Nama maskapai penerbangan.
 - Flight: Informasi kode penerbangan
 - Source City: Kota dari mana pesawat take off
 - Departure Time: Informasi waktu keberangkatan.
