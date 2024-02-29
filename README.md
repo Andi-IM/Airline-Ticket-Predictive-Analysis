@@ -321,11 +321,19 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
 - **Boosting**
 
   Boosting adalah algoritma yang bekerja dengan menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). Algoritma ini muncul dari gagasan mengenai apakah algoritma yang sederhana seperti regresi linear dan decision tree dapat dimodifikasi untuk dapat meningkatkan performa. Ada beberapa algoritma boosting yang akan digunakan pada proyek ini diantaranya:
-
-  - Gradient Boosting     
+  
   - AdaBoost
+ 
+    Adaboost adalah metode adaptive boosting yang diperkenalkan oelh Freud dan Schapire. Adaboost bekerja mengobservasi bobot dan memberi tugas bobot yang tinggi ke model yang belum dapat memahami dataset secara iteratif hingga model memiliki akurasi yang diinginkan. Kelebihan dari AdaBoost yaitu relatif lebih mudah untuk diimplementasikan dan waktu pengujian yang relatif cepat sehingga cocok dipakai dalam implementasi kondisi *real time*. Kekurangan dari AdaBoost yaitu membutuhkan hyperparameter tuning yang tepat untuk memberikan performa yang baik.
+
+  - Gradient Boosting
+    
+    Gradient Boosting adalah salah satu algoritma boosting, dimana menghasilkan model prediksi dari *weak learner* berbentuk decision tree. Gradient boosting melatih decision tree untuk meminimalkan *loss*.  
+    
+  
   - XG Boost
-   
+
+    Extreme Gradient Boosting (XGBoost) adlaah pengembangan lebih lanjut dari Gradient Boosting. Sama halnya dengan Gradient Boosting, XG Boost juga menggunakan algoritma Decision Tree sebagai *base learner* dan membangun ekspansi aditif dari objective function untuk meminimalkan *loss*. Namun, XGBoost memiliki skalabilitas yang lebih baik dan mampu melakukan optimasi lebih cepat dariapda Gradient Boosting[^X].
   
 ## Evaluation
 
@@ -433,5 +441,6 @@ Dapat dilihat dari keempat model yang digunakan dapat disimpulkan model random f
 [^13]: Kelleher, John D, et al. "Machine Learning for Predictive Data Analytics". MIT Press. 2020. Tersedia: [tautan informasi buku](https://machinelearningbook.com/).
 
 [^14]: Wang Y. (2023), "What Are The Advantages And Disadvantages Of Random Forest?". Rebelion Research. Tersedia: [tautan informasi](https://www.rebellionresearch.com/what-are-the-advantages-and-disadvantages-of-random-forest).
+
 
 [^X]: Shweta Goyal. (2021). Evaluation Metrics for Regression Models. diakses pada tanggal 28 Februari 2024, https://medium.com/analytics-vidhya/evaluation-metrics-for-regression-models-c91c65d73af
