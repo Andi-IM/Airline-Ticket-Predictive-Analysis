@@ -105,6 +105,8 @@ percent = 100*airlines['airline'].value_counts(normalize=True)
 df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
 print(df)
 
+count.plot(kind='bar', title='airline')
+
 """> Terdapat 6 Maskapai yang berbeda dan Vistara yang menjadi maskapai paling banyak digunakan.
 
 #### 2. Fitur flight
@@ -114,6 +116,8 @@ count = airlines['flight'].value_counts()
 percent = 100*airlines['flight'].value_counts(normalize=True)
 df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
 print(df)
+
+count[:10].plot(kind='bar', title='flight')
 
 num_of_flight = len(airlines['flight'].value_counts())
 print(f'Num of flight: {num_of_flight}')
@@ -128,6 +132,8 @@ percent = 100*airlines['source_city'].value_counts(normalize=True)
 df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
 print(df)
 
+count.plot(kind='bar', title='source_city')
+
 """> Terdapat 6 kota asal dan penerbangan dari Kota Delhi menjadi paling banyak.
 
 #### 4. Fitur destination_city
@@ -137,6 +143,8 @@ count = airlines['destination_city'].value_counts()
 percent = 100*airlines['destination_city'].value_counts(normalize=True)
 df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
 print(df)
+
+count.plot(kind='bar', title='destination_city')
 
 """> Terdapat 6 kota tujuan dan penerbangan menuju Kota Mumbai menjadi yang paling banyak.
 
@@ -148,6 +156,8 @@ percent = 100*airlines['departure_time'].value_counts(normalize=True)
 df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
 print(df)
 
+count.plot(kind='bar', title='departure_time')
+
 """> Waktu numerik diubah menjadi 6 kategorikal, dengan penerbangan di waktu pagi menjadi yang paling sibuk.
 
 #### 6. Fitur arrival_time
@@ -157,6 +167,8 @@ count = airlines['arrival_time'].value_counts()
 percent = 100*airlines['arrival_time'].value_counts(normalize=True)
 df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
 print(df)
+
+count.plot(kind='bar', title='arrival_time')
 
 """> Waktu numerik diubah menjadi 6 kategorikal, dengan kedatangan di waktu malam menjadi yang paling banyak.
 
@@ -168,6 +180,8 @@ percent = 100*airlines['stops'].value_counts(normalize=True)
 df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
 print(df)
 
+count.plot(kind='bar', title='stops')
+
 """> Jumlah transit penerbangan diubah menjadi 3 kategorikal dan penerbangan sekali menjadi yang paling banyak.
 
 #### 8. Fitur class
@@ -177,6 +191,8 @@ count = airlines['class'].value_counts()
 percent = 100*airlines['class'].value_counts(normalize=True)
 df = pd.DataFrame({'jumlah sampel':count, 'persentase':percent.round(1)})
 print(df)
+
+count.plot(kind='bar', title='class')
 
 """> Maskapai dengan kelas Ekonomi menjadi yang paling banyak digunakan dengan 68%.
 
