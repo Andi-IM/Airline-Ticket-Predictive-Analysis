@@ -21,6 +21,7 @@ Berasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan pengemb
 - Apakah harga tiket berubah berdasarkan waktu keberangkatan dan waktu kedatangan?
 - Bagaimana harga berubah dengan perubahan kota asal dan kota tujuan?
 - Bagaimana perbedaan harga tiket antara Kelas Ekonomi dan Kelas Bisnis?
+- Bagaimana harga berubah dengan perubahan jumlah pemberhentian?
 - Dari serangkaian fitur yang ada, fitur apa yang paling berpengaruh dalam memprediksi harga tiket pesawat?
 - Bagaimana mengolah dataset sedemikian rupa agar dapat dibuat model prediksi harga tiket pesawat?
 - Seberapa tinggi kemungkinan terjadinya kebakaran berdasarkan karakteristik atau fitur tertentu?
@@ -34,6 +35,7 @@ Untuk menjawab problem tersebut, maka akan dibuat predictive modeling dengan tuj
 - Mengetahui pengaruh pemilihan waktu keberangkatan dan kedatangan dengan harga tiket pesawat.
 - Mengetahui pengaruh pemilihan kota asal dan tujuan terhadap perubahan harga tiket pesawat.
 - Mengetahui perbedaan harga tiket kelas Ekonomi dan Bisnis.
+- Mengetahui pengaruh transit terhadap harga tiket pesawat.
 - Mengetahui fitur yang paling penting dan berkolerasi dengan nilai kemungkinan terjadinya kebakaran hutan berdasarkan data citra.
 - Melakukan proses *data wragling* dan *data preparation* agar dapat dijalankan pada model machine learning.
 - Membuat model machine learning yang dapat memprediksi kemungkinan terjadinya kebakaran berdasarkan fitur-fitur yang ada.  
@@ -233,16 +235,41 @@ Dari gambar di atas, dapat dilihat bahwa durasi memiliki korelasi yang paling ti
 
 #### Analisa Pengaruh Booking Terhadap Harga Tiket Pesawat
 
-![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/33fdea58-ee4b-48fd-8d0f-e369d7c08218)
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/33fdea58-ee4b-48fd-8d0f-e369d7c08218"></p>
 
 Dari grafik diatas dapat dilihat terjadi peningkatan harga 20 hari sebelum penerbangan dan penurunan tajam menjelang 1 hari penerbangan menjadi 3 kali lebih murah. Oleh karena itu kembali dianalisa apakah jika diberikan diskon akan memberikan dampak terhadap harga tiket. Diskon diberikan dengan 3 skema yaitu jika menjelang 1 hari keberangkatan, maka diberikan diskon 5 persen. Jika diatas 1 hari dan dibawah 8 hari sebesar 7%, lalu selebihnya hingga 15 hari sebesar 10%, diatas 15 hari tidak diberikan diskon karena harga yang stabil di atas 15 hari. Pemberian diskon memberikan hasil yang ditampilkan pada grafik di bawah ini.
 
-![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/18850704-bf76-4824-a175-5d4031197e74)
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/18850704-bf76-4824-a175-5d4031197e74"></p>
 
 Dapat dilihat ternyata pemberian diskon 1 hari menjelang penerbangan tidak begitu memberikan dampak terhadap harga karena hanya 0.6% yang mendapatkan diskon tersebut.
 
 #### Analisa Waktu Keberangkatan dan Waktu Kedatangan Terhadap Harga Tiket Pesawat
 
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/0f22cdae-5014-425e-af38-41004602cdb7"></p>
+
+Dari grafik diatas, terjadi peningkatan harga pada pembelian tiket untuk keberangkatan di waktu malam dan kedatangan di waktu sore. Sangat disarankan untuk membeli tiket dengan waktu keberangkatan di tengah malam. 
+
+#### Analisa Kota Asal dan Destinasi Penerbangan Terhadap Harga Tiket Pesawat
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/5768fd66-f392-4a7e-940d-d12046d26fe0"></p>
+
+Berdasarkan grafik ini, terlihat bahwa penerbangan yang berangkat dan tiba di Kota Delhi umumnya lebih murah, sedangkan penerbangan yang berangkat dan tiba di Kota Bangalore harganya lebih mahal.
+
+#### Analisa Harga Tiket Kelas Bisnis dan Kelas Ekonomi.
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f4d441ce-7a95-446d-a086-66dc4d3b6313"></p>
+
+Berdasarkan grafik ini, dapat dilihat bahwa Air India dan Vistara tergolong yang termahal, sedangkan AirAsia menawarkan harga yang paling bersahabat. Khusus untuk kelas bisnis, Vistara mematok harga tertinggi dibanding maskapai lain, termasuk AirAsia.
+
+#### Analisa Jumlah Pemberhentian terhadap Harga Tiket Pesawat.
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/064ca4ea-78d3-4dad-b7f0-dcf91c1e9119"></p>
+
+Dari data, dapat dilihat pemberhentian sekali atau penerbangan dengan transit sekali adalah yang paling banyak jika dibandingkan dengan penerbangan dua kali transit dan tanpa transit. Lalu grafik dibawah ini untuk mengetahui maskapai mana yang memiliki transit sekali paling banyak.
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/efbb8aae-d191-4635-9e83-e2b957ef7988"></p>
+
+Dari grafik dapat dilihat Vistara Airline dan Air india memiliki penerbangan dengan sekali transit paling banyak.
 
 ## Data Preparation
 
@@ -462,7 +489,9 @@ Dari hasil evaluasi diatas, dapat disimpulkan bahwa:
 
 - Maskapai memiliki pengaruh besar terhadap harga tiket pesawat adalah Vistara Airlines dengan Penerbangan tersibuknya, UK-706
 - Booking tiket pesawat pada 1 hingga 2 hari menjelang keberangkatan sangat sedikit dengan persentase 0.6% sehingga tidak diperlukan pemberian diskon karena tidak begitu mempengaruhi jumlah penumpang. 
+- Waktu keberangkatan dan kedatangan mempengaruhi harga tiket dengan rata-rata termurah di waktu tengah malam.
 - 
+
 ## References
 
 [^1]: R. H. Pranata, “PENERAPAN ALGORITMA JARINGAN SYARAF TIRUAN UNTUK MEMPREDIKSI HARGA TIKET PESAWAT,” Jurnal Sistem Komputer Musirawas (JUSIKOM), vol. 3, no. 2, p. 122, Dec. 2018, doi: https://doi.org/10.32767/jusikom.v3i2.334.
