@@ -452,13 +452,7 @@ Berdasarkan tabel di atas dapat dilihat bahwa XGB Regressor menampilkan performa
 
 Secara lebih jauh perbandingan metrik untuk masing-masing model dapat dilihat pada gambar berikut ini.
 
-![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/d204a53a-ac6e-46f1-8b1f-4677a74d4a20)
-
-![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/6da530e3-6906-494b-9c80-622afd941a53)
-
-![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ae0c3d4c-26cc-48bb-a287-c3e8aca61091)
-
-![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ff2640eb-1763-4e2f-a079-0635ee4cf7a6)
+![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/3a19f161-aaff-4bbc-8d06-b9ded0e2ed1c)
 
 Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pesawat dari 6 model yang telah dibuat. Seperti yang dapat dilihat pada tabel di bawah ini:
 
