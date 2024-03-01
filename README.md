@@ -8,11 +8,11 @@ Harga tiket pesawat sangat bergantung dengan beberapa faktor, seperti maskapai y
 
 Salah satu solusi yang dapat digunakan untuk memprediksi harga tiket pesawat adalah dengan menggunakan teknik analisis data yang disebut regresi. Dengan menggunakan regresi dan memasukkan faktor-faktor penentu harga tiket pesawat diharapkan dapat memprediksi harga tiket yang diinginkan[^2],[^3].
 
-## Business Understanding
+## *Business Understanding*
 
 Pengembangan model prediksi harga tiket pesawat memiliki potensi atau dampak berupa jadi faktor penentu keputusan oleh calon penumpang. Prediksi yang akurat akan membuat calon penumpang yakin dengan nilai dari suatu harga tiket yang ditawarkan.
 
-### Problem Statement
+### *Problem Statement*
 
 Berasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan pengembangan sistem yang dapat memprediksi kemungkinan terjadinya kebakaran hutan dengan menjawab permasalahan berikut:
 
@@ -26,7 +26,7 @@ Berasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan pengemb
 - Bagaimana mengolah dataset sedemikian rupa agar dapat dibuat model prediksi harga tiket pesawat?
 - Seberapa tinggi kemungkinan terjadinya kebakaran berdasarkan karakteristik atau fitur tertentu?
 
-### Goal Statement
+### *Goal Statement*
 
 Untuk menjawab problem tersebut, maka akan dibuat predictive modeling dengan tujuan atau goals sebagai berikut:
 
@@ -37,21 +37,21 @@ Untuk menjawab problem tersebut, maka akan dibuat predictive modeling dengan tuj
 - Mengetahui perbedaan harga tiket kelas Ekonomi dan Bisnis.
 - Mengetahui pengaruh transit terhadap harga tiket pesawat.
 - Mengetahui fitur yang paling penting dan berkolerasi dengan nilai kemungkinan terjadinya kebakaran hutan berdasarkan data citra.
-- Melakukan proses *data wragling* dan *data preparation* agar dapat dijalankan pada model machine learning.
-- Membuat model machine learning yang dapat memprediksi kemungkinan terjadinya kebakaran berdasarkan fitur-fitur yang ada.  
+- Melakukan proses *data wragling* dan *data preparation* agar dapat dijalankan pada model *machine learning*.
+- Membuat model *machine learning* yang dapat memprediksi kemungkinan terjadinya kebakaran berdasarkan fitur-fitur yang ada.  
 
-### Solution Statement
+### *Solution Statement*
 
 Solusi yang dapat menjawab permasalahan dan tujuan adalah sebagai berikut:
 
 - Eksplorasi fitur yang terdapat pada dataset dengan menggunakan teknik analisis univariat dan multivariat. Analisis univariat digunakan untuk melihat hubungan data. Analisis multivariat dilakukan untuk melihat hubungan antar fitur. Visualisasi dengan plot juga digunakan untuk memudahkan dalam penentuan fitur mana yang berguna, salah satunya menggunakan heatmap untuk melihat korelasi dari setiap fitur yang dimiliki.
-- Mepersiapkan data meliputi Data Ingesting, Data Cleaning, dan Data Formating. 
-- Menggunakan metode *Regresi* dengan memanfaatkan berbagai algoritma machine learning seperti Regresi Linear, Decision Tree,Random Forest, dan Boosting.
+- Mepersiapkan data meliputi *Data Ingesting*, *Data Cleaning*, dan *Data Formating*. 
+- Menggunakan metode *Regresi* dengan memanfaatkan berbagai algoritma *machine learning* seperti Regresi Linear, *Decision Tree*, *Random Forest*, dan *Boosting*.
 - Melakukan evaluasi terhadap model yang dikembangkan dengan metrik evaluasi model.
 
-## Data Understanding
+## *Data Understanding*
 
-Dataset yang digunakan dalam analisis kali ini adalah [*Flight Price Prediction*](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction/data) yang merupakan data penerbangan yang diambil melalui scapping data dari website dari tanggal 11 - 31 Maret 2022. yang terdokumentasi melalui platform [kaggle.com](kaggle.com).
+Dataset yang digunakan dalam analisis kali ini adalah [*Flight Price Prediction*](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction/data) yang merupakan data penerbangan yang diambil melalui *scrapping* data dari website dari tanggal 11 - 31 Maret 2022. yang terdokumentasi pada platform [kaggle.com](kaggle.com).
 
 Detail dari file ini adalah sebagai berikut:
 
@@ -61,18 +61,18 @@ Detail dari file ini adalah sebagai berikut:
 
 ### Dataset memiliki fitur-fitur sebagai berikut:
 
-- Airline: Nama maskapai penerbangan.
-- Flight: Informasi kode penerbangan
-- Source City: Kota dari mana pesawat take off
-- Departure Time: Informasi waktu keberangkatan.
-- Stops: Berapa kali peasawat transit.
-- Arrival Time: Informasi waktu kedatangan.
-- Destination City: Kota di mana pesawat tiba.
-- Class: Informasi seat class; terdapat kelas Bisnis dan Ekonomi.
-- Duration: Durasi penerbangan.
-- Price: Fitur target yang menyipan harga tiket.
+- `Airline`: Nama maskapai penerbangan.
+- `Flight`: Informasi kode penerbangan
+- `Source City`: Kota dari mana pesawat take off
+- `Departure Time`: Informasi waktu keberangkatan.
+- `Stops`: Berapa kali peasawat transit.
+- `Arrival Time`: Informasi waktu kedatangan.
+- `Destination City`: Kota di mana pesawat tiba.
+- `Class`: Informasi seat class; terdapat kelas Bisnis dan Ekonomi.
+- `Duration`: Durasi penerbangan.
+- `Price`: Fitur target yang menyipan harga tiket.
 
-### Explanatory Data Analysis
+### *Explanatory Data Analysis* (EDA)
 
 Untuk dapat memahami data lebih jelas, maka dilakukan analisis data melalui metode statistik yang disebut sebagai Analisis Data Eksplanatori (*Explanatory Data Analysis*) atau disingkat EDA[^4]. EDA meliputi Analisis Data Univariat dan Multivariat.
 
@@ -226,7 +226,7 @@ Untuk fitur class terdapat 2 kategori, yaitu: Ekonomi dan Bisnis. Kelas Ekonomi 
 Dari histogram "price" dapat diperoleh informasi antara lain:
 
 - Peningkatan harga tiket pesawat sebanding dengan penurunan jumlah sampel. Hal ini dapat kita lihat dengan jelas dari histogram "price" yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu y).
-- Rentang harga tiket cukup tinggi yaitu dari skala puluhan ribu rupee India hingga sekitar 100000 rupee.
+- Rentang harga tiket cukup tinggi yaitu dari skala puluhan ribu Rupee India hingga sekitar 100000 rupee.
 
 ### Analisis Multivariat
 
