@@ -309,7 +309,7 @@ Dimana Q1 adalah kuartil pertama dan Q3 adalah kuartil ketiga. Proyek ini terdap
 
 Setelah outlier dihilangkan maka jumlah data berkurang menjadi 297.920 sampel.
 
-Pada data formatting, data yang bersifat kategorikal diubah menjadi numerik dengan tujuan untuk mempersiapkan data yang dapat dijalankan oleh model machine learning dengan optimal dan mengamankan data untuk mencegah akses yang tak diizinkan[^7]. Salah satu bentuk teknik yang digunakan adalah Label Encoding yang mengubah kategori secara secara berurutan sesuai dengan posisinya. Library yang dapat digunakan adalah LabelEncoder dari sklearn. Sehingga bentuk data yang telah diubah menjadi seperti ini:
+Pada data formatting, data yang bersifat kategorikal diubah menjadi numerik dengan tujuan untuk mempersiapkan data yang dapat dijalankan oleh model machine learning dengan optimal dan mengamankan data untuk mencegah akses yang tak diizinkan[^7]. Salah satu bentuk teknik yang digunakan adalah Label Encoding yang mengubah kategori secara secara berurutan sesuai dengan posisinya. Library yang dapat digunakan adalah LabelEncoder dari sklearn. Sehingga bentuk data yang telah diubah menjadi seperti yang dapat dilihat pada Tabel 1:
 
 **Tabel 1. Bentuk Format yang sudah di-encode menggunakan LabelEncoder**
 |index|airline|source\_city|departure\_time|stops|arrival\_time|destination\_city|class|duration|days\_left|price|
@@ -320,7 +320,7 @@ Pada data formatting, data yang bersifat kategorikal diubah menjadi numerik deng
 |3|5|2|4|2|0|5|1|2\.25|1|5955|
 |4|5|2|4|2|4|5|1|2\.33|1|5955|
 
-Data akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset testing menggunakan library sklearn.preprocesing. Rasio yang digunakan untuk pemabgian adalah 70:30 sehingga dataset menjadi:
+Data yang telah di-*encode* akan dibagi menjadi 2 kelompok besar yatu dataset training dan dataset testing menggunakan library sklearn.preprocesing. Rasio yang digunakan untuk pemabgian adalah 70:30 sehingga dataset menjadi:
 
 - 210.107 sampel untuk dataset train
 - 90.046 sampel untuk dataset test
@@ -333,84 +333,93 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
 
 - **Regresi Linear**
 
-    Regresi Linar adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan data lain yang terkait dan diektahui dimana secara matematis dimodelkan sebagai persamaan linear. Regresi linear mencoba untuk memodelkan hubungan antara dua variabel dengan mencocokkan persama linier dengan data yang diamati[^9]. Satu variabel dianggap sebagai penjelas dan yang lainnya dianggap sebagai variabel dependen. Regresi linear memiliki keuntungan untuk permasalahan yang memiliki hubungan linear karena algoritma ini adalah yang paling kompleks dibandingkan yang lain yang juga mencoba menemukan hubungan antar variabel independen dan dependen.  Regresi Linear akan menjadi kelemahan jika hubungan antar variabel tidak linier. Selain itu hasil prediksi regresi linear merupakan nilai estimasi sehingga kemungkinan tidak sesuainya sangat tinggi. 
+    Regresi Linar adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan data lain yang terkait dan diektahui dimana secara matematis dimodelkan sebagai persamaan linear. Regresi linear mencoba untuk memodelkan hubungan antara dua variabel dengan mencocokkan persama linier dengan data yang diamati[^9]. Satu variabel dianggap sebagai penjelas dan yang lainnya dianggap sebagai variabel dependen. Untuk menggunakan model diperliukan untuk mengimpor modul LinearRegression dari library scikit-learn. Modul LinearRegression memiliki beberapa paramter antara lain:
 
-- **Decision Tree**
+  - fit_intercept: paksa untuk fit ke intersep
+  - copy_X: jika diset `True`; maka nilai X disalin; sebaliknya maka akan ditimpa.
+  - n_jobs: jumlah job (pekerjaan) yang digunakan secara paralel. Ia merupakan komponen untuk mengontrol thread atau proses yang berjalan secara paralel. n_jobs=-1 artinya semua proses berjalan secara paralel.
+  - positive: jika diset `True`, maka memaksa koefisien untuk menjadi bilangan positif.
+  
+  Di proyek ini, parameter yang digunakan adalah bawaan dari model sehingga parameter tersebut dibiarkan saja apa adanya.
+  
+  Regresi linear memiliki keuntungan untuk permasalahan yang memiliki hubungan linear karena algoritma ini adalah yang paling kompleks dibandingkan yang lain yang juga mencoba menemukan hubungan antar variabel independen dan dependen.  Regresi Linear akan menjadi kelemahan jika hubungan antar variabel tidak linier. Selain itu hasil prediksi regresi linear merupakan nilai estimasi sehingga kemungkinan tidak sesuainya sangat tinggi. 
 
-  Decision Tree merupakan satu dari banyaknya pendekatan praktikal *supervised learning*. Metode Decision Tree ini dapat digunakan untuk tugas regresi maupun tugas klasifikasi dengan praktis. ALgoritma ini mengubah fakta yang sangat besar menjadi pohon keputusan yang merepresentasikan aturan. Pohon keputusan ini juga berguna untuk mengeksplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dan sebuah variabel target[^10],[^11]. Decision tree memiliki kelebihan dan kelemahan sebagai berikut[^12]: 
+- ***Decision Tree***
 
-  Kelebihan Decision Tree:
+  *Decision Tree* (DT) merupakan satu dari banyaknya pendekatan praktikal *supervised learning*. Metode *Decision Tree* ini dapat digunakan untuk tugas regresi maupun tugas klasifikasi dengan praktis. ALgoritma ini mengubah fakta yang sangat besar menjadi pohon keputusan yang merepresentasikan aturan. DT ini juga berguna untuk mengeksplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dan sebuah variabel target[^10],[^11]. Decision tree memiliki kelebihan dan kelemahan sebagai berikut[^12]: 
+
+  Kelebihan DT:
 
   - Dapat digunakan untuk masalah klasifikasi dan regresi dengan baik.
   - Dapat menangkap hubungan non-linear
   - Dapat menangkap informasi tanpa harus melakukan transformasi data.
   - Berguna dalam eksplorasi data. 
 
-  Kekurangan Decision Tree:
+  Kelemahan DT:
 
   - Kurang mampu menggeneralisir apabila data berjumlah jutaan
   - Kurang cocok untuk dataset dengan banyak fitur
   - Mudah overfit
       
-- **Random Forest**
+- ***Random Forest***
   
-  Algoritma Random Forest adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*[^13]. Algoritma ini merupakan kombinasi dari decision tree sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan random forest terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah. Meskipun ini adalah penyempurnaan dari algoritma decision tree, algoritma random forest juga memiliki beberapa kelebihan dan kekurangan antara lain[^14]:
+  Algoritma *Random Forest* adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*[^13]. Algoritma ini merupakan kombinasi dari decision tree sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan *random forest* terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah. Meskipun ini adalah penyempurnaan dari algoritma DT, algoritma *random forest* juga memiliki beberapa kelebihan dan kelemahan antara lain[^14]:
 
-  Kelebihan Random Forest:
+  Kelebihan *Random Forest*:
 
-  - Robustness Random Forest dapat menangani data yang mengandung kesalahan (noise) dan data tidak normal (outlier) dengan baik. Hal ini membuatnya tidak mudah overfit, dan memberikan hasil prediksi yang baik pada data baru. 
-  - Akurasi Tinggi: Random Forest merupakan algoritma machine learning yang paling akurat. Ia dapat digunakan untuk masalah klasifikasi dan regresi, serta dapat bekerja denagn baik pada data kategorikal dan data kontinu.
-  - Cepat: Meskipun tergolong pada algoritma kompleks, Random Forest bekerja dengan cepat dan dapat menangani kumpulan data yang besar. Proses *Training*\-nya dapat dipercepat dengan proses paralel. 
+  - *Random Forest* dapat menangani data yang mengandung kesalahan (*noise*) dan data tidak normal (*outlier*) dengan baik. Hal ini membuatnya tidak mudah *overfit*, dan memberikan hasil prediksi yang baik pada data baru. 
+  - Akurasi Tinggi: *Random Forest* merupakan algoritma *machine learning* yang paling akurat. Ia dapat digunakan untuk masalah klasifikasi dan regresi, serta dapat bekerja dengan baik pada data kategorikal dan data kontinu.
+  - Cepat: Meskipun tergolong pada algoritma kompleks, *Random Forest* bekerja dengan cepat dan dapat menangani kumpulan data yang besar. Proses *Training*\-nya dapat dipercepat dengan proses paralel. 
   - Memberikan informasi fitur penting: Random Forest menyediakan ukuran *feature importance*, yang berguna untuk memilih fitur penting dan memahami data.
 
-   Kekurangan Rnadom Forest:
+   Kelemahan *Rnadom Forest*:
 
-  - Masih bisa overfitting: Meskipun algoritma ini lebih jarang terjadi overfitting dibandingkan Decision Tree tunggal, hal ini tetap bisa terjadi jika jumlah pohon terlalu banyak atau pohon terlalu *deep* dan kompleks.
-  - Multi interpretasi: Random Forest lebih sulit dipahami dibandingkan Decision Tree tunggal karena terdiri dari banyak phon. Hal ini membuat proses memahami bagaimana algoritma menghasilkan prediksi tertentu menjadi lebih rumit. 
+  - Masih bisa *overfitting*: Meskipun algoritma ini lebih jarang terjadi *overfitting* dibandingkan DT tunggal, hal ini tetap bisa terjadi jika jumlah pohon terlalu banyak atau pohon terlalu *deep* dan kompleks.
+  - Multi interpretasi: *Random Forest* lebih sulit dipahami dibandingkan Decision Tree tunggal karena terdiri dari banyak phon. Hal ini membuat proses memahami bagaimana algoritma menghasilkan prediksi tertentu menjadi lebih rumit. 
   - Waktu training yang lebih lama, jika jumlah dan kedalaman pohon yang tinggi.
   - Penggunaan memori yang lebih besar karena ia menyimpan banyak pohon. Ini akan menjadi masalah jika ukuran dataset sangat besar.  
      
 - **Boosting**
 
-  Boosting adalah algoritma yang bekerja dengan menggabungkan beberapa model sederhana dan dianggap lemah (weak learners) sehingga membentuk suatu model yang kuat (strong ensemble learner). Algoritma ini muncul dari gagasan mengenai apakah algoritma yang sederhana seperti regresi linear dan decision tree dapat dimodifikasi untuk dapat meningkatkan performa. Ada beberapa algoritma boosting yang akan digunakan pada proyek ini diantaranya:
+  *Boosting* adalah algoritma yang bekerja dengan menggabungkan beberapa model sederhana dan dianggap lemah (*weak learners*) sehingga membentuk suatu model yang kuat (*strong ensemble learner*). Algoritma ini muncul dari gagasan mengenai apakah algoritma yang sederhana seperti regresi linear dan *decision tree* dapat dimodifikasi untuk dapat meningkatkan performa. Ada beberapa algoritma *boosting* yang akan digunakan pada proyek ini diantaranya:
   
   - AdaBoost
  
     Adaboost adalah metode adaptive boosting yang diperkenalkan oelh Freud dan Schapire (1995)[^15]. Adaboost bekerja mengobservasi bobot dan memberi tugas bobot yang tinggi ke model yang belum dapat memahami dataset secara iteratif hingga model memiliki akurasi yang diinginkan. Kelebihan dari AdaBoost yaitu relatif lebih mudah untuk diimplementasikan dan waktu pengujian yang relatif cepat sehingga cocok dipakai dalam implementasi kondisi *real time*. Kekurangan dari AdaBoost yaitu membutuhkan hyperparameter tuning yang tepat untuk memberikan performa yang baik.
 
-  - Gradient Boosting
+  - *Gradient Boosting*
     
-    Gradient Boosting adalah salah satu algoritma *boosting*, dimana menghasilkan model prediksi dari *weak learner* berbentuk decision tree. Gradient boosting melatih decision tree untuk meminimalkan *loss*[^16]. Algoritma ini menggunakan pendekatan iteratif, di mana setiap iterasi bertujuan untuk meningkatkan model sebelumnya dengan menambahkan model baru. tahapan yang dilakukan pada algoritma Gradient Boosting adalah sebagai berikut:
+    *Gradient Boosting* adalah salah satu algoritma *boosting*, dimana menghasilkan model prediksi dari *weak learner* berbentuk *decision tree*. *Gradient boosting* melatih *decision tree* untuk meminimalkan *loss*[^16]. Algoritma ini menggunakan pendekatan iteratif, di mana setiap iterasi bertujuan untuk meningkatkan model sebelumnya dengan menambahkan model baru. tahapan yang dilakukan pada algoritma Gradient Boosting adalah sebagai berikut:
      
     1. **Inisialisasi model**: Tahap pertama adalah inisialisasi model, model awal dibuat sebagai model konstan yang merupakan rata-rata atau median dari target variabel.
-    2. **Membuat weak model**: Tahap ini weak model dibuat sebagai model yang mampu memprediksi eror dari model sebelumnya. Biasanya berupa model decision tree yang memiliki satu atau dua percabangan.
-    3. **Menghitung residual error**: Setelah model lemah dibuat, residual error dihutung sebagai selisih antara nilai prediksi dari model sebelumnya dan nilai asli dari target variable.
-    4. **Menyusun kembali data training**: data training diubah dengan menggunakan residual error sebagai target variable.
-    5. **Membuat model baru**: Model baru dibuat dengan memprediksi residual error yang dihasilkan dari model sebelunya.
+    2. **Membuat weak model**: Tahap ini weak model dibuat sebagai model yang mampu memprediksi eror dari model sebelumnya. Biasanya berupa model *decision tree* yang memiliki satu atau dua percabangan.
+    3. **Menghitung residual error**: Setelah model lemah dibuat, *residual error* dihutung sebagai selisih antara nilai prediksi dari model sebelumnya dan nilai asli dari target variable.
+    4. **Menyusun kembali data training**: data training diubah dengan menggunakan *residual error* sebagai target variable.
+    5. **Membuat model baru**: Model baru dibuat dengan memprediksi *residual error* yang dihasilkan dari model sebelunya.
     6. **Menggabungkan model**: Model baru yang dibuat pada tahap sebelunmnya digabungkan dengan model sebelumnya untuk membentuk model yang lebih baik.
-    7. **Iterasi berulang**: Tahap di atas dilakukan kembali berulang-ulang hingga mencapai kondisi berhenti yang diharapkan, seperti jumlah iterasi yang ditentukan atau tidak terdapat perubahan nilai residual error yang signifikan.
+    7. **Iterasi berulang**: Tahap di atas dilakukan kembali berulang-ulang hingga mencapai kondisi berhenti yang diharapkan, seperti jumlah iterasi yang ditentukan atau tidak terdapat perubahan nilai *residual error* yang signifikan.
    
-    Kelebihan Gradient Boosting:
+    Kelebihan *Gradient Boosting^:
 
     - Akurasi yang tinggi
     - Tidak memerlukan persyaratan yang ketat
     - Kecepatan komputasi yang cepat
 
-    Kekurangan Gradient Boosting
+    Kekurangan *Gradient Boosting*
 
     - Memerlukan tuning yang cermat
-    - Mudah overfit
+    - Mudah *overfit*
     - Memerlukan data yang banyak 
          
   - XG Boost
 
-    Extreme Gradient Boosting (XGBoost) adlaah pengembangan lebih lanjut dari Gradient Boosting. Sama halnya dengan Gradient Boosting, XG Boost juga menggunakan algoritma Decision Tree sebagai *base learner* dan membangun ekspansi aditif dari objective function untuk meminimalkan *loss*. Namun, XGBoost memiliki skalabilitas yang lebih baik dan mampu melakukan optimasi lebih cepat dariapda Gradient Boosting[^17].
+    *Extreme Gradient Boosting* (XGBoost) adalah pengembangan lebih lanjut dari *Gradient Boosting*. Sama halnya dengan Gradient Boosting, XG Boost juga menggunakan algoritma Decision Tree sebagai *base learner* dan membangun ekspansi aditif dari objective function untuk meminimalkan *loss*. Namun, XGBoost memiliki skalabilitas yang lebih baik dan mampu melakukan optimasi lebih cepat dariapda *Gradient Boosting*[^17].
   
 ## Evaluation
 
-Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai error yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^18]. 
+Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai *error* yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^18]. 
 
-Mean Absolute Error atau disingkat MAE adalah rata-rata perbedaan absolut antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa baik apabila nilai MAE semakin kecil atau sama dengan 0. MAE didefenisikan sebagai persamaan berikut:
+***Mean Absolute Error*** atau disingkat MAE adalah rata-rata perbedaan absolut antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa baik apabila nilai MAE semakin kecil atau sama dengan 0. MAE didefenisikan sebagai persamaan berikut:
 
 $$ MAE = \frac{1}{N} \sum_{i=1}^{N} |y_i - \hat y_i| $$
 
@@ -420,7 +429,7 @@ Dimana:
 - $\hat y_i$ = nilai prediksi
 - $y_i$ = nilai sebenarnya
 
-**Mean Squared Error** atau disingkat MSE adalah rata-rata dari perbedaan kuadrat antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa yang baik apabila nilai MSE semakin kecil atau sama dengan 0. MSE MSE didefenisikan sebagai persamaan berikut:
+***Mean Squared Error*** atau disingkat MSE adalah rata-rata dari perbedaan kuadrat antara nilai prediksi dengan nilai sebenarnya. Sebuah model dikatakan memiliki performa yang baik apabila nilai MSE semakin kecil atau sama dengan 0. MSE MSE didefenisikan sebagai persamaan berikut:
 
 $$ MSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat y_i)^2 $$
 
@@ -431,7 +440,7 @@ Dimana:
 - $y_i$ = nilai sebenarnya
 
 
-**Mean Absolute Percentage Error** atau disingkat MAPE adalah rata-rata dari selisih persentase antara nliai prediksi dan nlai aktual. Dengan kata lain, MAPE menghitung berapa rata-rata kesalahan dalam prediksi sebagai presentase aktual. Semakin kecil nilai MAPE, maka model tersebut dikatakan memliki performa yang bagus. MAPE didefenisikan sebagai persamaan berikut:
+***Mean Absolute Percentage Error*** atau disingkat MAPE adalah rata-rata dari selisih persentase antara nliai prediksi dan nlai aktual. Dengan kata lain, MAPE menghitung berapa rata-rata kesalahan dalam prediksi sebagai presentase aktual. Semakin kecil nilai MAPE, maka model tersebut dikatakan memliki performa yang bagus. MAPE didefenisikan sebagai persamaan berikut:
 
 $$ MAPE = \frac{1}{N} \sum_{i=1}^{N} |\frac{\hat y_i - y_i}{y_i} | \times 100% $$
 
@@ -450,13 +459,13 @@ $$ SSE = \sum_{i=1}^{N} (\hat y_i - y_i)^2 $$
 $$ SST = \sum_{i=1}^{N} (\bar y_i - y_i)^2 $$
 
 Keterangan:
-- SSE = Sum of Squared Error, adalah jumlah kuadrat dari perbedaan antara nilai prediksi dan nilai sebenarnya
-- SST = Total Sum of Squares, adalah jumlah kuardat dari perbedaan antara nilai prediksi dan rata-rata nilai sebenarnya.
+- SSE = *Sum of Squared Error*, adalah jumlah kuadrat dari perbedaan antara nilai prediksi dan nilai sebenarnya
+- SST = *Total Sum of Squares*, adalah jumlah kuardat dari perbedaan antara nilai prediksi dan rata-rata nilai sebenarnya.
 - N = jumlah data
 - $\hat y_i$ = nilai prediksi
 - $y_i$ = nilai sebenarnya
    
-Tabel di bawah ini merupakan perbandingan dari masing-masing model
+Hasil proses *training* masing-masing model machine learning dapat dilihat pada Tabel 2 di bawah ini:
 
 **Tabel 2. Hasil Evaluasi Model Machine Learning**
 |Model|MAE|MSE|MAPR|R2 Squared|
@@ -468,14 +477,14 @@ Tabel di bawah ini merupakan perbandingan dari masing-masing model
 |AdaBoostRegressor|3634\.494092801859|33299409\.99753702|0\.30562280935598|0\.9352327300261173|
 |XGBRegressor|**2041\.2474563602389**|**12286355\.686425244**|**0\.15052727511266395**|**0\.9761030686190323**|
 
-Berdasarkan tabel di atas dapat dilihat bahwa XGB Regressor menampilkan performa yang paling baik dengan nilai R<sup>2</sup> sebesar 0.98.
+Berdasarkan Tabel 2 di atas dapat dilihat bahwa XGB Regressor menampilkan performa yang paling baik dengan nilai R<sup>2</sup> sebesar 0.98.
 
 Secara lebih jauh perbandingan metrik untuk masing-masing model dapat dilihat pada gambar berikut ini.
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/3a19f161-aaff-4bbc-8d06-b9ded0e2ed1c" width="640px"></p>
 <p align="center"><b>Gambar 19. Visualisasi perbandingan evaluasi masing-masing model.</b></p>
 
-Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pesawat dari 6 model yang telah dibuat. Seperti yang dapat dilihat pada tabel di bawah ini:
+Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pesawat dari 6 model yang telah dibuat. Seperti yang dapat dilihat pada Tabel 3 di bawah ini:
 
 **Tabel 3. Hasil Prediksi Model Machine Learning**
 |index|y\_true|Linear Regression|Decision Tree Regressor|Random Forest Regressor|Gradient Boosting Regressor|AdaBoostRegressor|XGBRegressor|
@@ -486,7 +495,7 @@ Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pe
 |3|9105|9936\.22|11302\.31|11373\.39|9946\.43|10731\.9|10736\.3603515625|
 |4|8011|5396\.36|5295\.59|5336\.71|4696\.73|5559\.15|6237\.490234375|
 
-Untuk mempermudah analisis, kita bisa lihat perbandingannya pada Gambar 20:
+Untuk mempermudah analisis, dapat dibuat plot agar dapat melihat perbandingannya seperti yang ditampilkan pada Gambar 20.
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f4482f7e-aff5-4d8d-9067-f06cc24af205"></p>
 <p align="center"><b>Gambar 20. Visualisasi perbandingan hasil prediksi dengan data testing masing-masing model.</b></p>
