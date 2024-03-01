@@ -92,6 +92,9 @@ AirAsia            16098         5.4
 SpiceJet            9011         3.0
 ```
 
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/6fa9ca92-252a-4479-a3a3-d503708a8647"></p>
+<p align="center"><b>Gambar 1. Distribusi kategori fitur airline</b></p>
+
 Terdapat 6 kategori pada fitur airlines, secara berurutan dari jumlahnya yang paling banyak yaitu: Vistara, Air India, Indigo, GO FIRST, AirAsia, dan SpiceJet. 
 
 #### Fitur flight
@@ -113,6 +116,9 @@ SG-9923              1         0.0
 [1561 rows x 2 columns]
 ```
 
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/8285ff92-dd36-473d-82b7-45957d05b0c2"></p>
+<p align="center"><b>Gambar 2. Distribusi kategori untuk fitur flight</b></p>
+
 Terdapat lebih dari 1561 kategori untuk fitur flight.
 
 #### Fitur source_city
@@ -126,6 +132,9 @@ Kolkata            45841        15.4
 Hyderabad          40636        13.6
 Chennai            38056        12.8
 ```
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/a82ef317-3c20-4d94-b9e5-f4711134f00f"></p>
+<p align="center"><b>Gambar 3. Distribusi kategori untuk fitur source_city</b></p>
 
 Terdapat 6 kategori untuk fitur source_city, secara berurutan dari yang paling terbanyak yaitu Kota Delhi, Mumbai, Bangalore, Kolkata, Hyderabad, dan Chennai. Sebaran kota ini terlhat merata dengan persentase tertinggi 20.5%.
 
@@ -141,6 +150,9 @@ Afternoon              47100        15.8
 Late_Night              1306         0.4
 ```
 
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/4a17c8f3-8878-49e2-9d2e-8d07d7817bc2"></p>
+<p align="center"><b>Gambar 4. Distribusi kategori untuk fitur departure_time</b></p>
+
 Terdapat 6 kategori untuk fitur departure_time, secara berurutan dari waktu pagi, pagi awal, sore, malam, siang, dan larut malam.
 
 #### Fitur stops
@@ -151,6 +163,9 @@ one                 249478        83.7
 zero                 36004        12.1
 two_or_more          12438         4.2
 ```
+
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/47e097ad-e606-4786-8b97-83334381aa22"></p>
+<p align="center"><b>Gambar 5. Distribusi kategori untuk fitur stops</b></p>
 
 Pada fitur stops, sekali penerbangan adalah yang paling banyak ditemui.
 
@@ -166,6 +181,9 @@ Early_Morning          15367         5.2
 Late_Night             13988         4.7
 ```
 
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/b59035e8-bb7b-4f27-a690-720598814511"></p>
+<p align="center"><b>Gambar 6. Distribusi kategori untuk fitur arrival_time</b></p>
+
 Pada fitur arrival_time, terdapat 6 kategori yang sama dengan departure_time, namun malam yang paling banyak ditemui.
 
 #### Fitur destination_city
@@ -180,6 +198,9 @@ Hyderabad          42329        14.2
 Chennai            39970        13.4
 ```
 
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f6ec6623-74f5-4f52-8fc2-0be6fd5eb0d9"></p>
+<p align="center"><b>Gambar 7. Distribusi kategori untuk fitur destination_city</b></p>
+
 Untuk fitur destination_city memiliki kategori yang sama dengan source_city, namun Kota Mumbai yang paling banyak ditemui.
 
 #### Fitur class
@@ -190,6 +211,9 @@ Economy          204792        68.7
 Business          93128        31.3
 ```
 
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/d5a1ecd6-ac49-49e9-b023-cb9e1ee611b0"></p>
+<p align="center"><b>Gambar 8. Distribusi kategori untuk fitur class</b></p>
+
 Untuk fitur class terdapat 2 kategori, yaitu: Ekonomi dan Bisnis. Kelas Ekonomi paling banyak ditemui dengan persentase 68%.
 
 ### Analisis Univariat Data Numerikal
@@ -197,7 +221,7 @@ Untuk fitur class terdapat 2 kategori, yaitu: Ekonomi dan Bisnis. Kelas Ekonomi 
 <p align="center">
     <img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/7d41a441-8af3-4126-81ad-490eceffbfe1" width="640px">
 </p>
-<p align="center"><b>Analisis univariat untuk data numerik</b></p>
+<p align="center"><b>Gambar 9. Analisis univariat untuk data numerik</b></p>
 
 Dari histogram "price" dapat diperoleh informasi antara lain:
 
@@ -206,63 +230,57 @@ Dari histogram "price" dapat diperoleh informasi antara lain:
 
 ### Analisis Multivariat
 
-#### 7 Kota asal dan tujuan berdasarkan harga
-
-|index|source\_city|destination\_city|price|
-|---|---|---|---|
-|4|Bangalore|Mumbai|299261197|
-|25|Mumbai|Bangalore|298260354|
-|14|Delhi|Mumbai|295931282|
-|29|Mumbai|Kolkata|282022007|
-|27|Mumbai|Delhi|277303264|
-|24|Kolkata|Mumbai|253178558|
-|10|Delhi|Bangalore|250537591|
-
-Dari tabel di atas dapat dilihat bahwa pemilihan kota dapat mempengaruhi harga dari tiket pesawat
-
-#### 5 Penerbangan dan Maskapai Teratas Berdasarkan Harga
+#### Analisa Pengaruh Jenis Maskapai dan Penerbangan dengan Harga Tiket Pesawat 
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f895d9a9-5398-4e39-a5c2-2323b16c9ae1" width="640px"></p>
+<p align="center"><b>Gambar 10. 5 penerbangan dan maskapai teratas berdasarkan harga</b></p>
 
 Penerbangan yang paling sering digunakan adalah UK-706 dengan Maskapai Vistara airlines.
 
 #### Analisa Pengaruh Booking Terhadap Harga Tiket Pesawat
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/33fdea58-ee4b-48fd-8d0f-e369d7c08218"></p>
+<p align="center"><b>Gambar 11. Distribusi hari booking dengan tanggal keberangkatan</b></p>
 
-Dari grafik diatas dapat dilihat terjadi peningkatan harga 20 hari sebelum penerbangan dan penurunan tajam menjelang 1 hari penerbangan menjadi 3 kali lebih murah. Oleh karena itu kembali dianalisa apakah jika diberikan diskon akan memberikan dampak terhadap harga tiket. Diskon diberikan dengan 3 skema yaitu jika menjelang 1 hari keberangkatan, maka diberikan diskon 5 persen. Jika diatas 1 hari dan dibawah 8 hari sebesar 7%, lalu selebihnya hingga 15 hari sebesar 10%, diatas 15 hari tidak diberikan diskon karena harga yang stabil di atas 15 hari. Pemberian diskon memberikan hasil yang ditampilkan pada grafik di bawah ini.
+Pada Gambar 11 dapat dilihat terjadi peningkatan harga 20 hari sebelum penerbangan dan penurunan tajam menjelang 1 hari penerbangan menjadi 3 kali lebih murah. Oleh karena itu kembali dianalisa apakah jika diberikan diskon akan memberikan dampak terhadap harga tiket. Diskon diberikan dengan 3 skema yaitu jika menjelang 1 hari keberangkatan, maka diberikan diskon 5 persen. Jika diatas 1 hari dan dibawah 8 hari sebesar 7%, lalu selebihnya hingga 15 hari sebesar 10%, diatas 15 hari tidak diberikan diskon karena harga yang stabil di atas 15 hari. Pemberian diskon memberikan hasil yang ditampilkan pada grafik di bawah ini.
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/18850704-bf76-4824-a175-5d4031197e74"></p>
+<p align="center"><b>Gambar 12. Distribusi penawaran yang dapat diberikan ke pelanggan</b></p>
 
-Dapat dilihat ternyata pemberian diskon 1 hari menjelang penerbangan tidak begitu memberikan dampak terhadap harga karena hanya 0.6% yang mendapatkan diskon tersebut.
+Dari Gambar 12 menunjukkan ternyata pemberian diskon 1 hari menjelang penerbangan tidak begitu memberikan dampak terhadap harga karena hanya 0.6% yang mendapatkan diskon tersebut.
 
 #### Analisa Waktu Keberangkatan dan Waktu Kedatangan Terhadap Harga Tiket Pesawat
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/0f22cdae-5014-425e-af38-41004602cdb7"></p>
+<p align="center"><b>Gambar 13. Distribusi boxplot waktu keberangkatan dan waktu kedatangan</b></p>
 
-Dari grafik diatas, terjadi peningkatan harga pada pembelian tiket untuk keberangkatan di waktu malam dan kedatangan di waktu sore. Sangat disarankan untuk membeli tiket dengan waktu keberangkatan di tengah malam. 
+Berdasarkan distribusi pada Gambar 13, terjadi peningkatan harga pada pembelian tiket untuk keberangkatan di waktu malam dan kedatangan di waktu sore. Sangat disarankan untuk membeli tiket dengan waktu keberangkatan di tengah malam. 
 
 #### Analisa Kota Asal dan Destinasi Penerbangan Terhadap Harga Tiket Pesawat
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/5768fd66-f392-4a7e-940d-d12046d26fe0"></p>
+<p align="center"><b>Gambar 14. Distribusi kota asal dan destinasi</b></p>
 
-Berdasarkan grafik ini, terlihat bahwa penerbangan yang berangkat dan tiba di Kota Delhi umumnya lebih murah, sedangkan penerbangan yang berangkat dan tiba di Kota Bangalore harganya lebih mahal.
+Berdasarkan grafik pada Gambar 14, terlihat bahwa penerbangan yang berangkat dan tiba di Kota Delhi umumnya lebih murah, sedangkan penerbangan yang berangkat dan tiba di Kota Bangalore harganya lebih mahal.
 
 #### Analisa Harga Tiket Kelas Bisnis dan Kelas Ekonomi.
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f4d441ce-7a95-446d-a086-66dc4d3b6313"></p>
+<p align="center"><b>Gambar 15. Distribusi tiket kelas Ekonomi dan Bisnis</b></p>
 
-Berdasarkan grafik ini, dapat dilihat bahwa Air India dan Vistara tergolong yang termahal, sedangkan AirAsia menawarkan harga yang paling bersahabat. Khusus untuk kelas bisnis, Vistara mematok harga tertinggi dibanding maskapai lain, termasuk AirAsia.
+Pada Gambar 15, dapat dilihat bahwa Air India dan Vistara tergolong yang termahal, sedangkan AirAsia menawarkan harga yang paling bersahabat. Khusus untuk kelas bisnis, Vistara mematok harga tertinggi dibanding maskapai lain, termasuk AirAsia.
 
 #### Analisa Jumlah Pemberhentian terhadap Harga Tiket Pesawat.
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/064ca4ea-78d3-4dad-b7f0-dcf91c1e9119"></p>
+<p align="center"><b>Gambar 16. Distribusi kota asal dan destinasi</b></p>
 
-Dari data, dapat dilihat pemberhentian sekali atau penerbangan dengan transit sekali adalah yang paling banyak jika dibandingkan dengan penerbangan dua kali transit dan tanpa transit. Lalu grafik dibawah ini untuk mengetahui maskapai mana yang memiliki transit sekali paling banyak.
+Dari data pada gambar 16, dapat dilihat pemberhentian sekali atau penerbangan dengan transit sekali adalah yang paling banyak jika dibandingkan dengan penerbangan dua kali transit dan tanpa transit. Lalu grafik dibawah ini untuk mengetahui maskapai mana yang memiliki transit sekali paling banyak.
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/efbb8aae-d191-4635-9e83-e2b957ef7988"></p>
+<p align="center"><b>Gambar 17. Distribusi kota asal dan destinasi</b></p>
 
-Dari grafik dapat dilihat Vistara Airline dan Air india memiliki penerbangan dengan sekali transit paling banyak.
+Gambar 17 menunjukkan Vistara Airline dan Air india memiliki penerbangan dengan sekali transit paling banyak.
 
 ## Data Preparation
 
@@ -284,15 +302,16 @@ Pada kasus proyek ini tidak ditemukan *missing value* maupun data duplikat. Outl
 
 $$ IQR = Q3 - Q1 $$
 
-Dimana Q1 adalah kuartil pertama dan Q3 adalah kuartil ketiga. Proyek ini terdapat outlier pada durasi penerbangan seperti yang dilihat pada gambar di bawah ini:
+Dimana Q1 adalah kuartil pertama dan Q3 adalah kuartil ketiga. Proyek ini terdapat outlier pada durasi penerbangan seperti yang dilihat pada Gambar 18:
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ddae7578-ebd0-4d8e-bc28-f3193e37ab55" width="640px"></p>
-<p align="center">Visualisasi Boxplot untuk melihat outlier</p>
+<p align="center"><b>Gambar 18. Visualisasi Boxplot untuk melihat outlier</b></p>
 
 Setelah outlier dihilangkan maka jumlah data berkurang menjadi 297.920 sampel.
 
 Pada data formatting, data yang bersifat kategorikal diubah menjadi numerik dengan tujuan untuk mempersiapkan data yang dapat dijalankan oleh model machine learning dengan optimal dan mengamankan data untuk mencegah akses yang tak diizinkan[^7]. Salah satu bentuk teknik yang digunakan adalah Label Encoding yang mengubah kategori secara secara berurutan sesuai dengan posisinya. Library yang dapat digunakan adalah LabelEncoder dari sklearn. Sehingga bentuk data yang telah diubah menjadi seperti ini:
 
+**Tabel 1. Bentuk Format yang sudah di-encode menggunakan LabelEncoder**
 |index|airline|source\_city|departure\_time|stops|arrival\_time|destination\_city|class|duration|days\_left|price|
 |---|---|---|---|---|---|---|---|---|---|---|
 |0|4|2|2|2|5|5|1|2\.17|1|5953|
@@ -439,6 +458,7 @@ Keterangan:
    
 Tabel di bawah ini merupakan perbandingan dari masing-masing model
 
+**Tabel 2. Hasil Evaluasi Model Machine Learning**
 |Model|MAE|MSE|MAPR|R2 Squared|
 |:---|---|---|---|---|
 |Linear Regression|4633\.650914958173|48327818\.91012481|0\.4401630312483704|0\.9060025119113978|
@@ -452,10 +472,12 @@ Berdasarkan tabel di atas dapat dilihat bahwa XGB Regressor menampilkan performa
 
 Secara lebih jauh perbandingan metrik untuk masing-masing model dapat dilihat pada gambar berikut ini.
 
-![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/3a19f161-aaff-4bbc-8d06-b9ded0e2ed1c)
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/3a19f161-aaff-4bbc-8d06-b9ded0e2ed1c" width="640px"></p>
+<p align="center"><b>Gambar 19. Visualisasi perbandingan evaluasi masing-masing model.</b></p>
 
 Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pesawat dari 6 model yang telah dibuat. Seperti yang dapat dilihat pada tabel di bawah ini:
 
+**Tabel 3. Hasil Prediksi Model Machine Learning**
 |index|y\_true|Linear Regression|Decision Tree Regressor|Random Forest Regressor|Gradient Boosting Regressor|AdaBoostRegressor|XGBRegressor|
 |---|---|---|---|---|---|---|---|
 |0|7426|5943\.08|5295\.59|5244\.35|4906\.64|5559\.15|5356\.7001953125|
@@ -464,9 +486,10 @@ Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pe
 |3|9105|9936\.22|11302\.31|11373\.39|9946\.43|10731\.9|10736\.3603515625|
 |4|8011|5396\.36|5295\.59|5336\.71|4696\.73|5559\.15|6237\.490234375|
 
-Untuk mempermudah analisis, kita bisa lihat perbandingannya pada visualisasi di bawah ini:
+Untuk mempermudah analisis, kita bisa lihat perbandingannya pada Gambar 20:
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f4482f7e-aff5-4d8d-9067-f06cc24af205"></p>
+<p align="center"><b>Gambar 20. Visualisasi perbandingan hasil prediksi dengan data testing masing-masing model.</b></p>
 
 Berdasarkan hasil evaluasi, dapat dilihat bahwa prediksi harga tiket pesawat dengan Extreme Gradient Boost Regressor memberikan hasil yang paling mendekati y_true dapat dilihat dari visualisasi di atas yang mendominasi. 
 
