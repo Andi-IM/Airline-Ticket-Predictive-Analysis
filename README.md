@@ -282,7 +282,7 @@ Dari data pada gambar 16, dapat dilihat pemberhentian sekali atau penerbangan de
 
 Gambar 17 menunjukkan Vistara Airline dan Air india memiliki penerbangan dengan sekali transit paling banyak.
 
-## Data Preparation
+## *Data Preparation*
 
 *Data preparation* atau *data preprocessing* adalah teknik yang digunakan untuk mengubah data mentah dalam format yang berguna dan efisien[^5]. Fungsi utama dari *data preparation* adalah untuk memastikan bahwa data mentah yang akan diproses sudah akurat yang berimplikasi pada hasil analitik yang valid. Proses *data preparation* dilakukan empat tahap persiapan data, yaitu Data Ingestion, Data Cleaning, dan Data Formating. Pada tahap *Data Ingestion*, berikut beberapa pengecekan yang dilakukan:
 
