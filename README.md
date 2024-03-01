@@ -226,13 +226,6 @@ Dari tabel di atas dapat dilihat bahwa pemilihan kota dapat mempengaruhi harga d
 
 Penerbangan yang paling sering digunakan adalah UK-706 dengan Maskapai Vistara airlines.
 
-Hasil analisis multivariat antar fitur numerikal dapat dilihat pada diagram matriks korelasi berikut ini:
-
-<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/a51093c9-0d28-4c83-85e4-f8a0d85ec7ae" width="640px"></p>
-<p align="center">Matriks korelasi fitur numerik</p>
-
-Dari gambar di atas, dapat dilihat bahwa durasi memiliki korelasi yang paling tinggi terhadap relasi. Fitur days_left dapat dibuang karena memiliki korelasi yang paling lemah terhadap harga.
-
 #### Analisa Pengaruh Booking Terhadap Harga Tiket Pesawat
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/33fdea58-ee4b-48fd-8d0f-e369d7c08218"></p>
