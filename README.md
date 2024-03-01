@@ -51,7 +51,7 @@ Solusi yang dapat menjawab permasalahan dan tujuan adalah sebagai berikut:
 
 ## *Data Understanding*
 
-Dataset yang digunakan dalam analisis kali ini adalah [*Flight Price Prediction*](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction/data) yang merupakan data penerbangan yang diambil melalui *scrapping* data dari website dari tanggal 11 - 31 Maret 2022. yang terdokumentasi pada platform [kaggle.com](kaggle.com).
+Dataset yang digunakan dalam analisis kali ini adalah [*Flight Price Prediction*](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction/data) yang merupakan data penerbangan yang diambil melalui *scrapping* data dari website dari tanggal 11 - 31 Maret 2022 yang terdokumentasi pada platform [kaggle.com](kaggle.com).
 
 Detail dari file ini adalah sebagai berikut:
 
