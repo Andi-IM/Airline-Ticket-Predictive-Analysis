@@ -472,7 +472,9 @@ Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pe
 
 Untuk mempermudah analisis, kita bisa lihat perbandingannya pada visualisasi di bawah ini:
 
-![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f4482f7e-aff5-4d8d-9067-f06cc24af205)
+<p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f4482f7e-aff5-4d8d-9067-f06cc24af205"></p>
+
+![download]()
 
 Berdasarkan hasil evaluasi, dapat dilihat bahwa prediksi harga tiket pesawat dengan Extreme Gradient Boost Regressor memberikan hasil yang paling mendekati y_true dapat dilihat dari visualisasi di atas yang mendominasi. 
 
@@ -483,7 +485,9 @@ Dari hasil evaluasi diatas, dapat disimpulkan bahwa:
 - Maskapai memiliki pengaruh besar terhadap harga tiket pesawat adalah Vistara Airlines dengan Penerbangan tersibuknya, UK-706
 - Booking tiket pesawat pada 1 hingga 2 hari menjelang keberangkatan sangat sedikit dengan persentase 0.6% sehingga tidak diperlukan pemberian diskon karena tidak begitu mempengaruhi jumlah penumpang. 
 - Waktu keberangkatan dan kedatangan mempengaruhi harga tiket dengan rata-rata termurah di waktu tengah malam.
-- 
+- Kota asal dan tujuan juga mempengaruhi, dengan harga tiket dari dan ke Kota Delhi yang paling murah dan harga tiket dari dan ke kota Bangalore yang paling mahal.
+- Pada data umumnya orang-orang membeli tiket dengan sekali transit dan dengan maskapai Vistara dan Air India yang terbanyak.
+- Dari banyak algoritma regresi yang dikembangkan, Aglrotitma Extreme Gradient Boost atau XG Boost memiliki performa yang baik.
 
 ## References
 
