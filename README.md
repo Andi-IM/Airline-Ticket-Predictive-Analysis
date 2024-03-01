@@ -468,8 +468,6 @@ Untuk mempermudah analisis, kita bisa lihat perbandingannya pada visualisasi di 
 
 <p align="center"><img src="https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/f4482f7e-aff5-4d8d-9067-f06cc24af205"></p>
 
-![download]()
-
 Berdasarkan hasil evaluasi, dapat dilihat bahwa prediksi harga tiket pesawat dengan Extreme Gradient Boost Regressor memberikan hasil yang paling mendekati y_true dapat dilihat dari visualisasi di atas yang mendominasi. 
 
 ## Kesimpulan
