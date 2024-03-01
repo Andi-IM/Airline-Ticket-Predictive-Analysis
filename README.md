@@ -43,8 +43,8 @@ Untuk menjawab problem tersebut, maka akan dibuat predictive modeling dengan tuj
 Solusi yang dapat menjawab permasalahan dan tujuan adalah sebagai berikut:
 
 - Eksplorasi fitur yang terdapat pada dataset dengan menggunakan teknik analisis univariat dan multivariat. Analisis univariat digunakan untuk melihat hubungan data. Analisis multivariat dilakukan untuk melihat hubungan antar fitur. Visualisasi dengan plot juga digunakan untuk memudahkan dalam penentuan fitur mana yang berguna, salah satunya menggunakan heatmap untuk melihat korelasi dari setiap fitur yang dimiliki.
-- Mepersiapkan data meliputi Data Gathering, Data Ingesting, Data Cleaning, dan Data Formating. 
-- Menggunakan metode *Regresi* dengan memanfaatkan algoritma machine learning seperti KNN, Random Forest, Boosting, dan SVM.
+- Mepersiapkan data meliputi Data Ingesting, Data Cleaning, dan Data Formating. 
+- Menggunakan metode *Regresi* dengan memanfaatkan berbagai algoritma machine learning seperti Regresi Linear, Decision Tree,Random Forest, dan Boosting.
 - Melakukan evaluasi terhadap model yang dikembangkan dengan metrik evaluasi model.
 
 ## Data Understanding
@@ -230,6 +230,19 @@ Hasil analisis multivariat antar fitur numerikal dapat dilihat pada diagram matr
 <p align="center">Matriks korelasi fitur numerik</p>
 
 Dari gambar di atas, dapat dilihat bahwa durasi memiliki korelasi yang paling tinggi terhadap relasi. Fitur days_left dapat dibuang karena memiliki korelasi yang paling lemah terhadap harga.
+
+#### Analisa Pengaruh Booking Terhadap Harga Tiket Pesawat
+
+![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/33fdea58-ee4b-48fd-8d0f-e369d7c08218)
+
+Dari grafik diatas dapat dilihat terjadi peningkatan harga 20 hari sebelum penerbangan dan penurunan tajam menjelang 1 hari penerbangan menjadi 3 kali lebih murah. Oleh karena itu kembali dianalisa apakah jika diberikan diskon akan memberikan dampak terhadap harga tiket. Diskon diberikan dengan 3 skema yaitu jika menjelang 1 hari keberangkatan, maka diberikan diskon 5 persen. Jika diatas 1 hari dan dibawah 8 hari sebesar 7%, lalu selebihnya hingga 15 hari sebesar 10%, diatas 15 hari tidak diberikan diskon karena harga yang stabil di atas 15 hari. Pemberian diskon memberikan hasil yang ditampilkan pada grafik di bawah ini.
+
+![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/18850704-bf76-4824-a175-5d4031197e74)
+
+Dapat dilihat ternyata pemberian diskon 1 hari menjelang penerbangan tidak begitu memberikan dampak terhadap harga karena hanya 0.6% yang mendapatkan diskon tersebut.
+
+#### Analisa Waktu Keberangkatan dan Waktu Kedatangan Terhadap Harga Tiket Pesawat
+
 
 ## Data Preparation
 
@@ -427,7 +440,7 @@ Secara lebih jauh perbandingan metrik untuk masing-masing model dapat dilihat pa
 
 ![download](https://github.com/Andi-IM/Airline-Ticket-Predictive-Analysis/assets/21165698/ff2640eb-1763-4e2f-a079-0635ee4cf7a6)
 
-Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pesawat. Seperti yang dapat dilihat pada tabel di bawah ini:
+Selain itu dilakukakn perbandingan nilai y_true terhadap prediksi harga tiket pesawat dari 6 model yang telah dibuat. Seperti yang dapat dilihat pada tabel di bawah ini:
 
 |index|y\_true|Linear Regression|Decision Tree Regressor|Random Forest Regressor|Gradient Boosting Regressor|AdaBoostRegressor|XGBRegressor|
 |---|---|---|---|---|---|---|---|
@@ -447,8 +460,9 @@ Berdasarkan hasil evaluasi, dapat dilihat bahwa prediksi harga tiket pesawat den
 
 Dari hasil evaluasi diatas, dapat disimpulkan bahwa: 
 
-Angka..
-
+- Maskapai memiliki pengaruh besar terhadap harga tiket pesawat adalah Vistara Airlines dengan Penerbangan tersibuknya, UK-706
+- Booking tiket pesawat pada 1 hingga 2 hari menjelang keberangkatan sangat sedikit dengan persentase 0.6% sehingga tidak diperlukan pemberian diskon karena tidak begitu mempengaruhi jumlah penumpang. 
+- 
 ## References
 
 [^1]: R. H. Pranata, “PENERAPAN ALGORITMA JARINGAN SYARAF TIRUAN UNTUK MEMPREDIKSI HARGA TIKET PESAWAT,” Jurnal Sistem Komputer Musirawas (JUSIKOM), vol. 3, no. 2, p. 122, Dec. 2018, doi: https://doi.org/10.32767/jusikom.v3i2.334.
