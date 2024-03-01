@@ -333,7 +333,7 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
 
 - **Regresi Linear**
 
-    Regresi Linar adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan data lain yang terkait dan diektahui dimana secara matematis dimodelkan sebagai persamaan linear. Regresi linear mencoba untuk memodelkan hubungan antara dua variabel dengan mencocokkan persama linier dengan data yang diamati[^9]. Satu variabel dianggap sebagai penjelas dan yang lainnya dianggap sebagai variabel dependen. Untuk menggunakan model diperliukan untuk mengimpor modul LinearRegression dari library scikit-learn. Modul LinearRegression memiliki beberapa paramter antara lain:
+    Regresi Linar adalah teknik analisis data yang memprediksi nilai data yang tidak diketahui dengan menggunakan data lain yang terkait dan diektahui dimana secara matematis dimodelkan sebagai persamaan linear. Regresi linear mencoba untuk memodelkan hubungan antara dua variabel dengan mencocokkan persama linier dengan data yang diamati[^9]. Satu variabel dianggap sebagai penjelas dan yang lainnya dianggap sebagai variabel dependen. Untuk menggunakan model ini diperlukan  mengimpor modul `LinearRegression` dari library scikit-learn. Modul `LinearRegression` memiliki beberapa paramter antara lain:
 
   - fit_intercept: paksa untuk fit ke intersep
   - copy_X: jika diset `True`; maka nilai X disalin; sebaliknya maka akan ditimpa.
@@ -346,7 +346,16 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
 
 - ***Decision Tree***
 
-  *Decision Tree* (DT) merupakan satu dari banyaknya pendekatan praktikal *supervised learning*. Metode *Decision Tree* ini dapat digunakan untuk tugas regresi maupun tugas klasifikasi dengan praktis. ALgoritma ini mengubah fakta yang sangat besar menjadi pohon keputusan yang merepresentasikan aturan. DT ini juga berguna untuk mengeksplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dan sebuah variabel target[^10],[^11]. Decision tree memiliki kelebihan dan kelemahan sebagai berikut[^12]: 
+  *Decision Tree* (DT) merupakan satu dari banyaknya pendekatan praktikal *supervised learning*. Metode *Decision Tree* ini dapat digunakan untuk tugas regresi maupun tugas klasifikasi dengan praktis. ALgoritma ini mengubah fakta yang sangat besar menjadi pohon keputusan yang merepresentasikan aturan. DT ini juga berguna untuk mengeksplorasi data, menemukan hubungan tersembunyi antara sejumlah calon variabel input dan sebuah variabel target[^10],[^11].
+
+  Untuk menggunakan model ini diperlukan mengimpor modul `DecisionTreeRegressor` dari library scikit-learn. Modul `DecisionTreeRegreessor` memiliki beberapa parameter antara lain sebagai berikut:
+
+  - criterion: fungsi yang digunakan untuk mengitung kualitas *split*. 'friedman_mse' digunakan sebagai fungsi yang digunakan untuk proyek ini.
+  - max_deph: Kedalaman maksimum pohon. nilai max_deph=10 dimasukkan pada proyek ini.
+  - max_features: Fitur maksimal untuk setiap *split*, di proyek ini menggunakan nilai max_features=9
+  - random_state: digunakan untuk mengontrol random number generator yang digunakan, proyek ini menggunakan nilai random_state=42
+
+  Decision tree memiliki kelebihan dan kelemahan sebagai berikut[^12]: 
 
   Kelebihan DT:
 
@@ -363,7 +372,15 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
       
 - ***Random Forest***
   
-  Algoritma *Random Forest* adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*[^13]. Algoritma ini merupakan kombinasi dari decision tree sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan *random forest* terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah. Meskipun ini adalah penyempurnaan dari algoritma DT, algoritma *random forest* juga memiliki beberapa kelebihan dan kelemahan antara lain[^14]:
+  Algoritma *Random Forest* adalah algoritma yang sering digunakan karena sederhana dan memiliki stabilitas yang mumpuni. Algoritma ini termasuk varian teknik *bagging*[^13]. Algoritma ini merupakan kombinasi dari decision tree sedemikian hingga setiap pohon bergantung pada nilai vektor acak yang disampling secara independen dan dengan distribusi yang sama untuk semua pohon dalam hutan tersebut. Kekuatan *random forest* terletak pada seleksi fitur yang acak untuk memilah setiap *node*, yang mampu menghasilkan tingkat kesalahan relatif rendah.
+
+  Untuk menggunakan model ini diperlukan untuk mengimpor modul `RandomForestRegressor` dari library scikit-learn. Parameter yang digunakan pada proyek ini adalah sebagai berikut:
+
+  - n_estimators: jumlah *trees* (pohon) di *forest*. diset dengan nilai 100.
+  - max_depth:  kedalaman atau panjang pohon. Ia merupakan ukuran seberapa banyak pohon dapat membelah (splitting) untuk membagi setiap node ke dalam jumlah pengamatan yang diinginkan. Proyek ini menggunakan max_depth = 10 sebagai ukuran panjang banyaknya pohon yang dapat membelah (*splitting*) untuk membagi setiap *node* ke dalam jumlah pengamatan
+  - max_features: fitur maksimal untuk setiap *split*, di proyek ini menggunakan nilai max_features = 9
+
+  Meskipun ini adalah penyempurnaan dari algoritma DT, algoritma *random forest* juga memiliki beberapa kelebihan dan kelemahan antara lain[^14]:
 
   Kelebihan *Random Forest*:
 
@@ -385,7 +402,10 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
   
   - AdaBoost
  
-    Adaboost adalah metode adaptive boosting yang diperkenalkan oelh Freud dan Schapire (1995)[^15]. Adaboost bekerja mengobservasi bobot dan memberi tugas bobot yang tinggi ke model yang belum dapat memahami dataset secara iteratif hingga model memiliki akurasi yang diinginkan. Kelebihan dari AdaBoost yaitu relatif lebih mudah untuk diimplementasikan dan waktu pengujian yang relatif cepat sehingga cocok dipakai dalam implementasi kondisi *real time*. Kekurangan dari AdaBoost yaitu membutuhkan hyperparameter tuning yang tepat untuk memberikan performa yang baik.
+    Adaboost adalah metode adaptive boosting yang diperkenalkan oelh Freud dan Schapire (1995)[^15]. Adaboost bekerja mengobservasi bobot dan memberi tugas bobot yang tinggi ke model yang belum dapat memahami dataset secara iteratif hingga model memiliki akurasi yang diinginkan.
+    Parameter yang digunakan pada proyek ini antara lain:
+    - random_state: digunakan untuk mengontrol random number generator yang digunakan, pada proyek ini digunakan random_state = 42.       
+    Kelebihan dari AdaBoost yaitu relatif lebih mudah untuk diimplementasikan dan waktu pengujian yang relatif cepat sehingga cocok dipakai dalam implementasi kondisi *real time*. Kekurangan dari AdaBoost yaitu membutuhkan hyperparameter tuning yang tepat untuk memberikan performa yang baik.
 
   - *Gradient Boosting*
     
@@ -398,7 +418,10 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
     5. **Membuat model baru**: Model baru dibuat dengan memprediksi *residual error* yang dihasilkan dari model sebelunya.
     6. **Menggabungkan model**: Model baru yang dibuat pada tahap sebelunmnya digabungkan dengan model sebelumnya untuk membentuk model yang lebih baik.
     7. **Iterasi berulang**: Tahap di atas dilakukan kembali berulang-ulang hingga mencapai kondisi berhenti yang diharapkan, seperti jumlah iterasi yang ditentukan atau tidak terdapat perubahan nilai *residual error* yang signifikan.
-   
+ 
+    Parameter berikut ini yang digunakan pada proyek:
+    -   random_state: digunakan untuk mengontrol random number generator yang digunakan, pada proyek ini digunakan random_state = 42.
+      
     Kelebihan *Gradient Boosting^:
 
     - Akurasi yang tinggi
@@ -413,7 +436,7 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
          
   - XG Boost
 
-    *Extreme Gradient Boosting* (XGBoost) adalah pengembangan lebih lanjut dari *Gradient Boosting*. Sama halnya dengan Gradient Boosting, XG Boost juga menggunakan algoritma Decision Tree sebagai *base learner* dan membangun ekspansi aditif dari objective function untuk meminimalkan *loss*. Namun, XGBoost memiliki skalabilitas yang lebih baik dan mampu melakukan optimasi lebih cepat dariapda *Gradient Boosting*[^17].
+    *Extreme Gradient Boosting* (XGBoost) adalah pengembangan lebih lanjut dari *Gradient Boosting*. Sama halnya dengan Gradient Boosting, XG Boost juga menggunakan algoritma Decision Tree sebagai *base learner* dan membangun ekspansi aditif dari objective function untuk meminimalkan *loss*. Namun, XGBoost memiliki skalabilitas yang lebih baik dan mampu melakukan optimasi lebih cepat dariapda *Gradient Boosting*[^17]. Parameter **default** diterapkan pada proyek ini sehingga tidak perlu menginputkan parameter.
   
 ## Evaluation
 
