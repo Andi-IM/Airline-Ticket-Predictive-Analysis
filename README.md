@@ -325,7 +325,7 @@ Data yang telah di-*encode* akan dibagi menjadi 2 kelompok besar yatu dataset tr
 - 210.107 sampel untuk dataset train
 - 90.046 sampel untuk dataset test
 
-## Modeling
+## *Modeling*
 
 Kasus yang sedang dipahami pada proyek ini adalah mencari tahu hubungan antara kolom harga dengan kolom-kolom lain yang memperngaruhi harga sehingga pemodelan regresi adalah metode yang tepat. Regresi adalah proses indetifikasi relasi dan pengaruhnya pada nilai-nilai objek yang bertujuan untuk menemukan suatu fungsi yang memodelkan data dengan meminimalkan error[^8]. 
 
@@ -438,7 +438,7 @@ Ada banyak variasi dari model regresi dan berikut model yang akan dikembangkan d
 
     *Extreme Gradient Boosting* (XGBoost) adalah pengembangan lebih lanjut dari *Gradient Boosting*. Sama halnya dengan Gradient Boosting, XG Boost juga menggunakan algoritma Decision Tree sebagai *base learner* dan membangun ekspansi aditif dari objective function untuk meminimalkan *loss*. Namun, XGBoost memiliki skalabilitas yang lebih baik dan mampu melakukan optimasi lebih cepat dariapda *Gradient Boosting*[^17]. Parameter **default** diterapkan pada proyek ini sehingga tidak perlu menginputkan parameter.
   
-## Evaluation
+## *Evaluation*
 
 Proyek ini menggunakan *machine learning* dengan kasus regresi oleh karena itu metrik yang digunakan adalah metrik yang membandingkan hasil prediksi dengan nilai sebenarnya. Model dikatakan baik jika memiliki nilai *error* yang kecil atau perbandingan antara hasil prediksi dengan nilai sebenarnya tidak jauh atau mendekati. Adapun metrik yang digunakan sebagai alat ukur performa model antara lain **MAE**, **MSE**, **MAPR**, dan **R<sup>2</sup>**[^18]. 
 
@@ -536,7 +536,7 @@ Dari hasil evaluasi diatas, dapat disimpulkan bahwa:
 - Pada data umumnya orang-orang membeli tiket dengan sekali transit dan dengan maskapai Vistara dan Air India yang terbanyak.
 - Dari banyak algoritma regresi yang dikembangkan, Aglrotitma Extreme Gradient Boost atau XG Boost memiliki performa yang baik.
 
-## References
+## *References*
 
 [^1]: R. H. Pranata, “PENERAPAN ALGORITMA JARINGAN SYARAF TIRUAN UNTUK MEMPREDIKSI HARGA TIKET PESAWAT,” Jurnal Sistem Komputer Musirawas (JUSIKOM), vol. 3, no. 2, p. 122, Dec. 2018, doi: https://doi.org/10.32767/jusikom.v3i2.334.
 
