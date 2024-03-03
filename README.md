@@ -14,7 +14,7 @@ Pengembangan model prediksi harga tiket pesawat memiliki potensi atau dampak ber
 
 ### *Problem Statement*
 
-Berasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan pengembangan sistem yang dapat memprediksi kemungkinan terjadinya kebakaran hutan dengan menjawab permasalahan berikut:
+Berasarkan dari kondisi yang telah diuraikan sebelumnya, maka diperlukan pengembangan sistem yang dapat memprediksi harga tiket pesawat menjawab permasalahan berikut:
 
 - Apakah harga bervariasi tergantung dengan maskapai penerbangan?
 - Bagaimana harga tiket terpengaruh ketika dibeli hanya 1 atau 2 hari sebelum keberangkatan?
